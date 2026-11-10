@@ -1,0 +1,11 @@
+﻿# Deterministic animation timeline
+
+`analyzeCircuit` reads existing electrical objects; `buildSequence` creates a separate presentation snapshot. `evaluatePresentationAt(sequence, timeSeconds)` is a pure seekable evaluator. No render delta or wall-clock accumulator controls video progression. Frame N is evaluated at N/FPS with duration 1/FPS; total frames are ceil(sequence.duration × FPS).
+
+Shots contain ID, kind, explicit start/duration, camera start/end, connection IDs, labels and camera-quality diagnostics. Sequence settings hold background, label and animation preferences. Sections are opening, camera moves, stable per-connection reveals, optional complementary inspections, closing overview and final hold. The all mode shares a common reveal shot. Orbit starts with completed connections. Selected mode preserves explicit saved order, not checkbox click order.
+
+Wire progression reuses `wireAnimationProgress` and the shared `wireDrawCount` primitive from the editor. The renderer copies the actual high-quality TubeGeometry. Three.js TubeGeometry uses `getPointAt`/arc-length parameterization, and the draw range advances complete radial rings. A partial wire therefore follows the same existing curve and bend points, with tessellation-limited end precision. No straight scaled replacement cable is constructed. Original Animate All/One by One/Selected controls remain unchanged.
+
+Completed wires remain visible by default. Disabling that option suppresses completed wires during connection shots, then restores every eligible connection for closing/final. Fading and glow are export-only material/marker effects. Original project objects are never modified. Pin markers use the actual world anchors and the destination appears once the reveal reaches it. Component focus uses owned material clones.
+
+Preview and export call the same renderer/evaluator. Seeking backwards reconstructs all previous/current/future progress rather than accumulating state. The test suite checks equal state and equal PNG pixels after seeking away and returning, and verifies project/camera/undo preservation after a full export. Timing settings are versioned local presets; generated sequences are rebuilt from a fresh circuit snapshot.

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.tsbuildinfo
+debug.log
+artifacts/
+Custom Components/

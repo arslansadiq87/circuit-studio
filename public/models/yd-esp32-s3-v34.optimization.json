@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "source": "public/models/yd-esp32-s3-v34.glb",
+  "sourceSha256": "f675b1f9f4ca88f183e1dc8b887bf775eb1b6f20fd72fcdf2e942a3d3e27a92b",
+  "original": {
+    "bytes": 19774332,
+    "meshes": 182,
+    "primitives": 12062,
+    "triangles": 736345,
+    "vertices": 619875,
+    "materials": 37,
+    "textures": 0,
+    "bounds": {
+      "min": [
+        -34.8150000000016,
+        -13.97499980926513,
+        -3.2100000190734965
+      ],
+      "max": [
+        29.2087807606268,
+        13.975000381469728,
+        8.699999809265138
+      ]
+    }
+  },
+  "levels": {
+    "high": {
+      "path": "public/models/yd-esp32-s3-v34-high.glb",
+      "bytes": 2933312,
+      "ratio": 1,
+      "error": 0,
+      "meshes": 20,
+      "primitives": 34,
+      "triangles": 736345,
+      "vertices": 617678,
+      "materials": 34,
+      "textures": 0,
+      "bounds": {
+        "min": [
+          -34.8150000000016,
+          -13.974631946829856,
+          -3.210202209461335
+        ],
+        "max": [
+          29.20877929687496,
+          13.974632900504172,
+          8.700202123630646
+        ]
+      }
+    },
+    "medium": {
+      "path": "public/models/yd-esp32-s3-v34-medium.glb",
+      "bytes": 1404616,
+      "ratio": 0.24,
+      "error": 0.0005,
+      "meshes": 20,
+      "primitives": 34,
+      "triangles": 289338,
+      "vertices": 288464,
+      "materials": 34,
+      "textures": 0,
+      "bounds": {
+        "min": [
+          -34.8150000000016,
+          -13.974631946829856,
+          -3.210202209461335
+        ],
+        "max": [
+          29.20877929687496,
+          13.974632900504172,
+          8.700202123630646
+        ]
+      }
+    },
+    "low": {
+      "path": "public/models/yd-esp32-s3-v34-low.glb",
+      "bytes": 1094824,
+      "ratio": 0.07,
+      "error": 0.002,
+      "meshes": 20,
+      "primitives": 34,
+      "triangles": 213608,
+      "vertices": 232570,
+      "materials": 34,
+      "textures": 0,
+      "bounds": {
+        "min": [
+          -34.8150000000016,
+          -13.974631946829856,
+          -3.210202209461335
+        ],
+        "max": [
+          29.20877929687496,
+          13.974632900504172,
+          8.700202123630646
+        ]
+      }
+    }
+  },
+  "method": "glTF Transform: dedup, weld, error-bounded simplification, flatten, material join, meshopt compression. No recentering or scaling; same master origin in every LOD."
+}

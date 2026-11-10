@@ -1,0 +1,435 @@
+{
+  "id": "dvr8825",
+  "modelId": "dvr8825",
+  "name": "DVR8825 stepper driver module",
+  "position": [
+    0,
+    55,
+    0
+  ],
+  "rotation": [
+    0,
+    0,
+    0
+  ],
+  "dimensions": [
+    20.32,
+    14.999853,
+    11.003075
+  ],
+  "pins": [
+    {
+      "id": "J1-1",
+      "label": "J1-1",
+      "side": "left",
+      "index": 0,
+      "physicalPosition": 1,
+      "electrical": "passive",
+      "localPosition": [
+        -8.89,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        1.17,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J1-2",
+      "label": "J1-2",
+      "side": "left",
+      "index": 1,
+      "physicalPosition": 2,
+      "electrical": "passive",
+      "localPosition": [
+        -6.35,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        3.71,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J1-3",
+      "label": "J1-3",
+      "side": "left",
+      "index": 2,
+      "physicalPosition": 3,
+      "electrical": "passive",
+      "localPosition": [
+        -3.81,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        6.25,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J1-4",
+      "label": "J1-4",
+      "side": "left",
+      "index": 3,
+      "physicalPosition": 4,
+      "electrical": "passive",
+      "localPosition": [
+        -1.27,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        8.79,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J1-5",
+      "label": "J1-5",
+      "side": "left",
+      "index": 4,
+      "physicalPosition": 5,
+      "electrical": "passive",
+      "localPosition": [
+        1.27,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        11.33,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J1-6",
+      "label": "J1-6",
+      "side": "left",
+      "index": 5,
+      "physicalPosition": 6,
+      "electrical": "passive",
+      "localPosition": [
+        3.81,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        13.87,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J1-7",
+      "label": "J1-7",
+      "side": "left",
+      "index": 6,
+      "physicalPosition": 7,
+      "electrical": "passive",
+      "localPosition": [
+        6.35,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        16.41,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J1-8",
+      "label": "J1-8",
+      "side": "left",
+      "index": 7,
+      "physicalPosition": 8,
+      "electrical": "passive",
+      "localPosition": [
+        8.89,
+        -6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        18.95,
+        1.27,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-1",
+      "label": "J2-1",
+      "side": "right",
+      "index": 0,
+      "physicalPosition": 1,
+      "electrical": "passive",
+      "localPosition": [
+        -8.89,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        1.17,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-2",
+      "label": "J2-2",
+      "side": "right",
+      "index": 1,
+      "physicalPosition": 2,
+      "electrical": "passive",
+      "localPosition": [
+        -6.35,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        3.71,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-3",
+      "label": "J2-3",
+      "side": "right",
+      "index": 2,
+      "physicalPosition": 3,
+      "electrical": "passive",
+      "localPosition": [
+        -3.81,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        6.25,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-4",
+      "label": "J2-4",
+      "side": "right",
+      "index": 3,
+      "physicalPosition": 4,
+      "electrical": "passive",
+      "localPosition": [
+        -1.27,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        8.79,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-5",
+      "label": "J2-5",
+      "side": "right",
+      "index": 4,
+      "physicalPosition": 5,
+      "electrical": "passive",
+      "localPosition": [
+        1.27,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        11.33,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-6",
+      "label": "J2-6",
+      "side": "right",
+      "index": 5,
+      "physicalPosition": 6,
+      "electrical": "passive",
+      "localPosition": [
+        3.81,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        13.87,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-7",
+      "label": "J2-7",
+      "side": "right",
+      "index": 6,
+      "physicalPosition": 7,
+      "electrical": "passive",
+      "localPosition": [
+        6.35,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        16.41,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    },
+    {
+      "id": "J2-8",
+      "label": "J2-8",
+      "side": "right",
+      "index": 7,
+      "physicalPosition": 8,
+      "electrical": "passive",
+      "localPosition": [
+        8.89,
+        6.23,
+        0.000039
+      ],
+      "cadPosition": [
+        18.95,
+        13.73,
+        0.156379
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Header tip measured from STEP. Signal name is not established by this CAD file."
+    }
+  ],
+  "geometry": {
+    "kind": "model",
+    "quality": "detailed",
+    "modelFormat": "glb",
+    "modelAssetId": "dvr8825-cad",
+    "modelUrl": "/models/dvr8825.glb?v=no-heatsink-1",
+    "modelCenter": [
+      10.06,
+      7.5,
+      5.657877
+    ],
+    "origin": [
+      0,
+      0,
+      -5.501537
+    ],
+    "calibrated": true,
+    "verified": false,
+    "geometryVerified": true,
+    "pinPositionsVerified": true,
+    "electricalMappingVerified": false,
+    "pinToleranceMm": 0.05,
+    "modelSource": "Imported STEP CAD",
+    "sourceFilename": "DVR8825.stp",
+    "sourceSha256": "cfa9a0671828dbbf2436b910565b2e58df3c9b9e619eb98f2cc9d987ba49e656",
+    "triangleCount": 117814,
+    "meshCount": 2,
+    "materialCount": 4
+  }
+}

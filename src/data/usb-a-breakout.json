@@ -1,0 +1,234 @@
+﻿{
+    "id":  "usb-a",
+    "modelId":  "usb-a-female",
+    "name":  "USB-A female breakout board",
+    "position":  [
+                     42,
+                     0,
+                     0
+                 ],
+    "rotation":  [
+                     0,
+                     0,
+                     0
+                 ],
+    "dimensions":  [
+                       20.099978637043368,
+                       28.100089222910384,
+                       12.20002040704562
+                   ],
+    "pins":  [
+                 {
+                     "id":  "A1",
+                     "label":  "VBUS",
+                     "silkscreen":  "VBUS",
+                     "side":  "bottom",
+                     "index":  0,
+                     "physicalPosition":  1,
+                     "electrical":  "power-in",
+                     "voltage":  5,
+                     "localPosition":  [
+                                           5.25,
+                                           -14.05,
+                                           0.275
+                                       ],
+                     "cadPosition":  [
+                                         5.25,
+                                         -14.05,
+                                         0.275
+                                     ],
+                     "exitDirection":  [
+                                           0,
+                                           -1,
+                                           0
+                                       ],
+                     "notes":  "Center of the measured screw-terminal wire-entry aperture; insulation ends flush with the housing entry plane, 0.05 mm inside the 6 mm clear bore. Shell is not a signal contact.",
+                     "wireEntry":  {
+                                       "entryPosition":  [
+                                                             5.25,
+                                                             -14.05,
+                                                             0.275
+                                                         ],
+                                       "insertionDirection":  [
+                                                                  0,
+                                                                  1,
+                                                                  0
+                                                              ],
+                                       "approachLength":  0.25,
+                                       "insertionDepth":  0.05,
+                                       "clearanceDirection":  [
+                                                                  0,
+                                                                  0,
+                                                                  1
+                                                              ],
+                                       "clearanceOffset":  6.82496
+                                   }
+                 },
+                 {
+                     "id":  "A2",
+                     "label":  "D-",
+                     "silkscreen":  "D-",
+                     "side":  "bottom",
+                     "index":  1,
+                     "physicalPosition":  2,
+                     "electrical":  "bidirectional",
+                     "localPosition":  [
+                                           1.75,
+                                           -14.05,
+                                           0.275
+                                       ],
+                     "cadPosition":  [
+                                         1.75,
+                                         -14.05,
+                                         0.275
+                                     ],
+                     "exitDirection":  [
+                                           0,
+                                           -1,
+                                           0
+                                       ],
+                     "notes":  "Center of the measured screw-terminal wire-entry aperture; insulation ends flush with the housing entry plane, 0.05 mm inside the 6 mm clear bore. Shell is not a signal contact.",
+                     "wireEntry":  {
+                                       "entryPosition":  [
+                                                             1.75,
+                                                             -14.05,
+                                                             0.275
+                                                         ],
+                                       "insertionDirection":  [
+                                                                  0,
+                                                                  1,
+                                                                  0
+                                                              ],
+                                       "approachLength":  0.25,
+                                       "insertionDepth":  0.05,
+                                       "clearanceDirection":  [
+                                                                  0,
+                                                                  0,
+                                                                  1
+                                                              ],
+                                       "clearanceOffset":  6.82496
+                                   }
+                 },
+                 {
+                     "id":  "A3",
+                     "label":  "D+",
+                     "silkscreen":  "D+",
+                     "side":  "bottom",
+                     "index":  2,
+                     "physicalPosition":  3,
+                     "electrical":  "bidirectional",
+                     "localPosition":  [
+                                           -1.75,
+                                           -14.05,
+                                           0.275
+                                       ],
+                     "cadPosition":  [
+                                         -1.75,
+                                         -14.05,
+                                         0.275
+                                     ],
+                     "exitDirection":  [
+                                           0,
+                                           -1,
+                                           0
+                                       ],
+                     "notes":  "Center of the measured screw-terminal wire-entry aperture; insulation ends flush with the housing entry plane, 0.05 mm inside the 6 mm clear bore. Shell is not a signal contact.",
+                     "wireEntry":  {
+                                       "entryPosition":  [
+                                                             -1.75,
+                                                             -14.05,
+                                                             0.275
+                                                         ],
+                                       "insertionDirection":  [
+                                                                  0,
+                                                                  1,
+                                                                  0
+                                                              ],
+                                       "approachLength":  0.25,
+                                       "insertionDepth":  0.05,
+                                       "clearanceDirection":  [
+                                                                  0,
+                                                                  0,
+                                                                  1
+                                                              ],
+                                       "clearanceOffset":  6.82496
+                                   }
+                 },
+                 {
+                     "id":  "A4",
+                     "label":  "GND",
+                     "silkscreen":  "GND",
+                     "side":  "bottom",
+                     "index":  3,
+                     "physicalPosition":  4,
+                     "electrical":  "ground",
+                     "voltage":  0,
+                     "localPosition":  [
+                                           -5.25,
+                                           -14.05,
+                                           0.275
+                                       ],
+                     "cadPosition":  [
+                                         -5.25,
+                                         -14.05,
+                                         0.275
+                                     ],
+                     "exitDirection":  [
+                                           0,
+                                           -1,
+                                           0
+                                       ],
+                     "notes":  "Center of the measured screw-terminal wire-entry aperture; insulation ends flush with the housing entry plane, 0.05 mm inside the 6 mm clear bore. Shell is not a signal contact.",
+                     "wireEntry":  {
+                                       "entryPosition":  [
+                                                             -5.25,
+                                                             -14.05,
+                                                             0.275
+                                                         ],
+                                       "insertionDirection":  [
+                                                                  0,
+                                                                  1,
+                                                                  0
+                                                              ],
+                                       "approachLength":  0.25,
+                                       "insertionDepth":  0.05,
+                                       "clearanceDirection":  [
+                                                                  0,
+                                                                  0,
+                                                                  1
+                                                              ],
+                                       "clearanceOffset":  6.82496
+                                   }
+                 }
+             ],
+    "geometry":  {
+                     "kind":  "model",
+                     "quality":  "detailed",
+                     "modelFormat":  "glb",
+                     "modelAssetId":  "usb-a-breakout",
+                     "modelUrl":  "/models/usb-a-breakout.glb",
+                     "modelCenter":  [
+                                         0,
+                                         0,
+                                         0
+                                     ],
+                     "origin":  [
+                                    0,
+                                    0,
+                                    0
+                                ],
+                     "calibrated":  true,
+                     "verified":  true,
+                     "geometryVerified":  true,
+                     "pinPositionsVerified":  true,
+                     "electricalMappingVerified":  true,
+                     "pinMappingVersion":  1,
+                     "pinToleranceMm":  0.05,
+                     "sourceFilename":  "USB Type A Female Breakout Board.step",
+                     "sourceSha256":  "2081af6c93cbd58084f6904f88e3ac4ecc308d930a2442225f3df0aae51e8122",
+                     "modelSource":  "Imported STEP CAD",
+                     "meshCount":  1,
+                     "triangleCount":  118268,
+                     "materialCount":  7
+                 }
+}

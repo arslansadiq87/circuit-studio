@@ -1,0 +1,24 @@
+import fs from 'node:fs/promises';
+import {NodeIO} from '@gltf-transform/core';
+import {ALL_EXTENSIONS} from '@gltf-transform/extensions';
+import {dedup,flatten,join,weld,prune,meshopt,getBounds} from '@gltf-transform/functions';
+import {MeshoptEncoder,MeshoptDecoder} from 'meshoptimizer';
+
+await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
+const cad=JSON.parse(await fs.readFile('artifacts/ldr-cad.json','utf8'));
+const leads=cad.solids.filter(s=>Math.abs(s.size[0]-.5)<.001&&Math.abs(s.size[1]-.5)<.001&&s.size[2]>10).sort((a,b)=>a.min[0]-b.min[0]);
+if(leads.length!==2||leads.some(s=>Math.abs(s.min[2]+10)>.001))throw new Error('Expected two 0.5 mm leads ending at CAD Z=-10');
+const doc=await io.read('artifacts/ldr-source.glb'),scene=doc.getRoot().listScenes()[0];
+const scale=doc.createNode('STEP metres to app millimetres').setScale([1000,1000,1000]);
+for(const node of scene.listChildren()){scene.removeChild(node);scale.addChild(node)}scene.addChild(scale);
+await doc.transform(dedup(),flatten(),join({keepNamed:false}),weld(),prune(),meshopt({encoder:MeshoptEncoder,level:'high',quantizePosition:16,quantizeNormal:12}));
+await io.write('public/models/ldr.glb',doc);
+const runtime=await io.read('public/models/ldr.glb'),bounds=getBounds(runtime.getRoot().listScenes()[0]);
+if(bounds.min.some((n,i)=>Math.abs(n-cad.boundsMm.min[i])>.03)||bounds.max.some((n,i)=>Math.abs(n-cad.boundsMm.max[i])>.03))throw new Error('Exported GLB bounds differ from STEP');
+const pins=leads.map((lead,i)=>({id:`P${i}`,label:String(i+1),side:i?'right':'left',index:0,physicalPosition:i+1,electrical:'passive',localPosition:[Number(((lead.min[0]+lead.max[0])/2).toFixed(6)),Number(((lead.min[1]+lead.max[1])/2).toFixed(6)),0],cadPosition:[Number(((lead.min[0]+lead.max[0])/2).toFixed(6)),Number(((lead.min[1]+lead.max[1])/2).toFixed(6)),-10],exitDirection:[0,0,-1],notes:'Measured from the flat lead tip in LDR12.step; interchangeable passive terminals.'}));
+let triangles=0;for(const mesh of runtime.getRoot().listMeshes())for(const primitive of mesh.listPrimitives())triangles+=(primitive.getIndices()?.getCount()??primitive.getAttribute('POSITION').getCount())/3;
+const component={id:'ldr',modelId:'ldr',name:'LDR (light dependent resistor)',position:[0,55,0],rotation:[0,0,0],dimensions:bounds.max.map((n,i)=>Number((n-bounds.min[i]).toFixed(6))),pins,geometry:{kind:'model',quality:'detailed',modelFormat:'glb',modelAssetId:'ldr-cad',modelUrl:'/models/ldr.glb?v=colors-1',modelCenter:[0,0,-4],origin:[0,0,-6],calibrated:true,verified:true,geometryVerified:true,pinPositionsVerified:true,electricalMappingVerified:true,pinToleranceMm:.03,modelSource:'Imported STEP CAD',sourceFilename:'LDR12.step',sourceSha256:cad.sourceSha256,triangleCount:triangles,meshCount:runtime.getRoot().listMeshes().length,materialCount:runtime.getRoot().listMaterials().length}};
+await fs.writeFile('src/data/ldr.json',JSON.stringify(component,null,2));
+await fs.writeFile('public/models/ldr.manifest.json',JSON.stringify({source:'Custom Components/LDR12.step',sourceSha256:cad.sourceSha256,sourceBoundsMm:cad.boundsMm,component,bytes:(await fs.stat('public/models/ldr.glb')).size,note:'Both terminals measured from separate cylindrical lead solids; no polarity or resistance value assigned.'},null,2));
+console.log(JSON.stringify(component,null,2));

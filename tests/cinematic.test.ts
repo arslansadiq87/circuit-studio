@@ -1,0 +1,72 @@
+﻿import {describe,it,expect} from 'vitest';
+import {initialProject} from '../src/model';
+import {analyzeCircuit,buildSequence,evaluatePresentationAt,defaultVideoSettings,cameraFor,validSettings,videoFilename,backgroundCss,backgroundSolidColor,type VideoSettings} from '../src/cinematic';
+import {wireDrawCount} from '../src/wireAnimation';
+import {makeWireCurve,worldPin,worldPinDirection} from '../src/geometry';
+import {Box3,Vector3} from 'three';
+const boxCorners=(box:Box3)=>{const points:Vector3[]=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])points.push(new Vector3(x,y,z));return points};
+describe('deterministic cinematic planning',()=>{
+ it('keeps the opening and final overview upright like the editor workbench',()=>{
+  const sequence=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),defaultVideoSettings);
+  const opening=sequence.shots.find(s=>s.id==='opening')!.cameraEnd;
+  const closing=sequence.shots.find(s=>s.id==='closing')!.cameraEnd;
+  const final=evaluatePresentationAt(sequence,sequence.duration).camera;
+  for(const pose of [opening,closing,final]){
+   expect(pose.position[1]).toBeLessThan(pose.target[1]);
+   expect(pose.position[2]).toBeGreaterThan(pose.target[2]);
+  }
+  const camera=cameraFor(opening);
+  const board=new Vector3(...initialProject.components[0].position).project(camera);
+  const supply=new Vector3(...initialProject.components[2].position).project(camera);
+  expect(board.y).toBeGreaterThan(supply.y);
+  const componentBounds=new Box3();for(const solid of sequence.analysis.solids)componentBounds.union(solid.box);
+  for(const point of boxCorners(componentBounds)){const projected=point.project(camera);expect(Math.abs(projected.x)).toBeLessThan(.84);expect(Math.abs(projected.y)).toBeLessThan(.78)}
+ });
+ it('uses real ordered anchors and manual curves without changing electrical state',()=>{
+  const project=structuredClone(initialProject);project.wireOrder=['wire-vbus','wire-dp'];project.components[0].rotation=[37,18,92];const before=JSON.stringify(project);
+  const a=analyzeCircuit(project,defaultVideoSettings);expect(a.connections).toHaveLength(5);expect(a.connections[0].wire.id).toBe('wire-vbus');expect(a.connections[1].wire.id).toBe('wire-dp');
+  for(const c of a.connections){expect(c.points[0].distanceTo(c.routeStart)).toBeLessThan(1e-9);expect(c.points.at(-1)!.distanceTo(c.routeEnd)).toBeLessThan(1e-9);if(c.destinationEntry){expect(c.destinationEntry.opening.distanceTo(c.b)).toBeLessThan(1e-8);expect(c.routeEnd.distanceTo(c.destinationEntry.opening)).toBeCloseTo(c.destinationEntry.insertionDepth)}}
+  const sequence=buildSequence(a,defaultVideoSettings);const shot=sequence.shots.find(s=>s.kind==='wire')!;const t=shot.start+.4;const one=evaluatePresentationAt(sequence,t);evaluatePresentationAt(sequence,sequence.duration);expect(evaluatePresentationAt(sequence,t)).toEqual(one);expect(one.progress['wire-vbus']).toBeGreaterThan(0);expect(one.progress['wire-vbus']).toBeLessThan(1);expect(one.progress['wire-dp']).toBe(0);
+  expect(Object.values(evaluatePresentationAt(sequence,sequence.duration).progress)).toEqual([1,1,1,1,1]);expect(JSON.stringify(project)).toBe(before);
+ });
+ it('filters hidden components, missing pins and selected wires in saved order',()=>{
+  const p=structuredClone(initialProject);p.components[2].visible=false;expect(analyzeCircuit(p,defaultVideoSettings).connections.map(c=>c.wire.id)).toEqual(['wire-dm','wire-dp','wire-ground']);
+  p.wires[0].from.pinId='missing';expect(analyzeCircuit(p,{...defaultVideoSettings,mode:'selected'},['wire-dp','wire-dm']).connections.map(c=>c.wire.id)).toEqual(['wire-dp']);
+  expect(()=>analyzeCircuit({...p,wires:[]},defaultVideoSettings)).toThrow('No visible valid');expect(analyzeCircuit({...p,wires:[]},{...defaultVideoSettings,mode:'orbit'}).connections).toHaveLength(0);
+ });
+ it('frames complete routes and connected parts within the export safe frame',()=>{
+  const p=structuredClone(initialProject);p.components[0].position=[-150,90,37];p.components[1].rotation=[23,68,-35];const a=analyzeCircuit(p,defaultVideoSettings),s=buildSequence(a,defaultVideoSettings);
+  for(const shot of s.shots.filter(s=>s.kind==='wire')){const c=a.connections.find(c=>c.wire.id===shot.connectionIds[0])!,camera=cameraFor(shot.cameraEnd);const points=[...c.points,...a.solids.filter(x=>x.id===c.sourceComponentId||x.id===c.destinationComponentId).flatMap(x=>boxCorners(x.box))];for(const point of points){const v=point.clone().project(camera);expect(Math.abs(v.x)).toBeLessThan(.84);expect(Math.abs(v.y)).toBeLessThan(.78)}}
+ });
+ it('uses one stable paired overview per connection without automatic pin macro shots',()=>{
+  const sequence=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),defaultVideoSettings),moves=sequence.shots.filter(s=>s.kind==='move'),wires=sequence.shots.filter(s=>s.kind==='wire');
+  expect(sequence.shots.some(s=>s.kind==='inspect')).toBe(false);expect(moves).toHaveLength(5);expect(wires).toHaveLength(5);expect(defaultVideoSettings.closing).toBe(2);expect(sequence.duration).toBeCloseTo(21.72,2);
+  for(let i=0;i<moves.length;i++){
+   const move=moves[i],wire=wires[i],connection=sequence.analysis.connections.find(c=>c.wire.id===move.connectionIds[0])!;
+   expect(wire.connectionIds).toEqual(move.connectionIds);expect(wire.cameraEnd).toEqual(move.cameraEnd);expect(move.duration).toBe(.8);
+   const direction=new Vector3(...move.cameraEnd.position).sub(new Vector3(...move.cameraEnd.target)).normalize(),prior=new Vector3(...move.cameraStart.position).sub(new Vector3(...move.cameraStart.target)).normalize();expect(direction.dot(prior)).toBeGreaterThan(.55);
+   const camera=cameraFor(move.cameraEnd),parts=sequence.analysis.solids.filter(s=>s.id===connection.sourceComponentId||s.id===connection.destinationComponentId);
+   for(const point of [...connection.points,...parts.flatMap(s=>boxCorners(s.box))]){const projected=point.clone().project(camera);expect(Math.abs(projected.x)).toBeLessThan(.84);expect(Math.abs(projected.y)).toBeLessThan(.78)}
+  }
+  const electricalShots=moves.filter(move=>{const c=sequence.analysis.connections.find(x=>x.wire.id===move.connectionIds[0])!;return [c.sourceElectrical,c.destinationElectrical].some(kind=>kind==='ground'||kind==='power-in'||kind==='power-out')});expect(electricalShots).toHaveLength(3);
+  for(const move of electricalShots){const camera=cameraFor(move.cameraEnd),direction=new Vector3(...move.cameraEnd.position).sub(new Vector3(...move.cameraEnd.target)).normalize(),prior=new Vector3(...move.cameraStart.position).sub(new Vector3(...move.cameraStart.target)).normalize();expect(direction.dot(prior)).toBeGreaterThan(.99);for(const solid of sequence.analysis.solids)for(const point of boxCorners(solid.box)){const projected=point.clone().project(camera);expect(Math.abs(projected.x)).toBeLessThan(.84);expect(Math.abs(projected.y)).toBeLessThan(.78)}}
+  const closing=sequence.shots.find(s=>s.id==='closing')!,final=sequence.shots.find(s=>s.id==='final')!;expect(final.cameraEnd).toEqual(closing.cameraEnd);for(const solid of sequence.analysis.solids)for(const point of boxCorners(solid.box)){const projected=point.clone().project(cameraFor(final.cameraEnd));expect(Math.abs(projected.x)).toBeLessThan(.84);expect(Math.abs(projected.y)).toBeLessThan(.78)}
+ });
+ it('keeps transformed pin anchors exact for all supported route modes',()=>{
+  const project=structuredClone(initialProject);project.components[0].rotation=[34,-17,61];project.components[1].rotation=[-12,42,19];
+  for(const mode of ['auto','straight','orthogonal','manual'] as const)for(const wire of project.wires){
+   const ca=project.components.find(c=>c.id===wire.from.componentId)!,cb=project.components.find(c=>c.id===wire.to.componentId)!,pa=ca.pins.find(p=>p.id===wire.from.pinId)!,pb=cb.pins.find(p=>p.id===wire.to.pinId)!,a=worldPin(pa,ca),b=worldPin(pb,cb),curve=makeWireCurve({...wire,routeMode:mode,bendPoints:[[4,7,28],[21,-13,34]]},a,b,worldPinDirection(pa,ca),worldPinDirection(pb,cb));
+   for(const p of [curve.getPoint(0),curve.getPointAt(0),curve.getSpacedPoints(40)[0]])expect(p.distanceTo(a)).toBeLessThan(1e-8);
+   for(const p of [curve.getPoint(1),curve.getPointAt(1),curve.getSpacedPoints(40).at(-1)!])expect(p.distanceTo(b)).toBeLessThan(1e-8);
+  }
+ });
+ it('reveals all simultaneously and keeps final circuit complete',()=>{const s=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),{...defaultVideoSettings,mode:'all'}),shot=s.shots.find(s=>s.kind==='wire')!,state=evaluatePresentationAt(s,shot.start+.5);expect(new Set(Object.values(state.progress)).size).toBe(1);expect(Object.values(evaluatePresentationAt(s,s.duration).progress).every(p=>p===1)).toBe(true)});
+ it('holds the closing title at full opacity for two seconds without a final fade',()=>{const s=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),defaultVideoSettings),shot=s.shots.find(s=>s.kind==='final')!;expect(shot.duration).toBeCloseTo(2.22,5);expect(s.duration).toBeCloseTo(21.72,5);expect(evaluatePresentationAt(s,shot.start+.18).labelOpacity).toBeCloseTo(1,5);expect(evaluatePresentationAt(s,s.duration-.001).labelOpacity).toBe(1);expect(Object.values(evaluatePresentationAt(s,s.duration-.001).progress).every(p=>p===1)).toBe(true);const extended=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),{...defaultVideoSettings,finalHold:3});expect(extended.shots.find(s=>s.kind==='final')!.duration).toBeCloseTo(3.22,5);const noFinal=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),{...defaultVideoSettings,finalHold:0});expect(noFinal.shots.some(s=>s.kind==='final')).toBe(false)});
+ it('rejects stale overrides and sanitizes presets and filenames',()=>{const s=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),{...defaultVideoSettings,overrides:{opening:{position:[NaN,0,0],target:[0,0,0]}}});expect(s.warnings.some(w=>w.includes('Invalid camera'))).toBe(true);expect(validSettings({width:1,fps:7,reveal:NaN}).width).toBe(1920);expect(videoFilename('a/b:c',defaultVideoSettings)).toBe('a-b-c_Wiring_1080p30.mp4');expect(wireDrawCount(.5,128,9216)).toBe(4608)});
+ it('migrates saved v1 video backgrounds and validates custom colors without losing animation settings',()=>{const legacy=validSettings({version:1,background:'white',format:'mp4',mode:'orbit',closing:4});expect(legacy.version).toBe(2);expect(legacy.backgroundPresetId).toBe('pure-white');expect(legacy.mode).toBe('orbit');expect(legacy.closing).toBe(4);const unsafe=validSettings({...legacy,backgroundPresetId:'custom-solid',customSolidColor:'url(javascript:alert(1))',floorColor:'#12zzzz'});expect(unsafe.customSolidColor).toBe(defaultVideoSettings.customSolidColor);expect(unsafe.floorColor).toBe(defaultVideoSettings.floorColor);expect(backgroundSolidColor({...defaultVideoSettings,backgroundPresetId:'custom-solid',customSolidColor:'#24354F'})).toBe('#24354F')});
+ it('defaults new videos to the futuristic HUD while preserving existing saved caption styles',()=>{expect(defaultVideoSettings.hudStyle).toBe('futuristic');expect(defaultVideoSettings.closingLabel).toBe('project-name');expect(validSettings(null).hudStyle).toBe('futuristic');expect(validSettings({version:2,labels:'minimal',backgroundPresetId:'dark-studio'}).hudStyle).toBe('classic');expect(validSettings({version:2,hudStyle:'minimal',closingLabel:'connection-summary'}).hudStyle).toBe('minimal');expect(validSettings({version:2,hudStyle:'invalid',closingLabel:'unknown'}).hudStyle).toBe('futuristic');expect(validSettings({version:2,hudStyle:'classic',closingLabel:'connection-summary'}).closingLabel).toBe('connection-summary');expect(validSettings({version:2,hudStyle:'none',closingLabel:'none'}).closingLabel).toBe('none')});
+ it('uses the documented default preset colors and keeps optional floor effects disabled',()=>{const color=(backgroundPresetId:VideoSettings['backgroundPresetId'])=>backgroundSolidColor({...defaultVideoSettings,backgroundPresetId});expect(color('dark-studio')).toBe('#171B22');expect(color('pure-black')).toBe('#000000');expect(color('pure-white')).toBe('#FFFFFF');expect(color('light-gray')).toBe('#D9DCE1');expect(color('neutral-gray')).toBe('#777B82');expect(color('studio-blue')).toBe('#172A44');expect(color('green-screen')).toBe('#00FF00');expect(defaultVideoSettings.showFloor).toBe(false);expect(defaultVideoSettings.showGrid).toBe(false);expect(defaultVideoSettings.groundShadows).toBe(false)});
+ it('validates video-only fill and rim light intensities independently from background selection',()=>{expect(defaultVideoSettings.fillLightIntensity).toBe(.55);expect(defaultVideoSettings.rimLightIntensity).toBe(.55);const adjusted=validSettings({...defaultVideoSettings,backgroundPresetId:'neutral-gray',fillLightIntensity:1.1,rimLightIntensity:.3});expect(adjusted.backgroundPresetId).toBe('neutral-gray');expect(adjusted.fillLightIntensity).toBe(1.1);expect(adjusted.rimLightIntensity).toBe(.3);const bounded=validSettings({...defaultVideoSettings,fillLightIntensity:-2,rimLightIntensity:4});expect(bounded.fillLightIntensity).toBe(0);expect(bounded.rimLightIntensity).toBe(1.5);const legacy=validSettings({version:2,backgroundPresetId:'pure-white'});expect(legacy.fillLightIntensity).toBe(.55);expect(legacy.rimLightIntensity).toBe(.55)});
+ it('keeps gradients as background presets and limits transparency to alpha-capable PNG frames',()=>{expect(backgroundCss({...defaultVideoSettings,backgroundPresetId:'dark-gradient'})).toContain('linear-gradient');const old=validSettings({version:1,background:'transparent',format:'mp4'});expect(old.backgroundPresetId).toBe('dark-studio');expect(validSettings({...defaultVideoSettings,backgroundPresetId:'transparent',format:'mp4'}).backgroundPresetId).toBe('dark-studio');expect(validSettings({...defaultVideoSettings,backgroundPresetId:'transparent',format:'png'}).backgroundPresetId).toBe('transparent')});
+ it('evaluates finite camera positions across every transition',()=>{const s=buildSequence(analyzeCircuit(initialProject,defaultVideoSettings),defaultVideoSettings);for(let t=0;t<s.duration;t+=.05){const pose=evaluatePresentationAt(s,t).camera;expect([...pose.position,...pose.target].every(Number.isFinite)).toBe(true);expect(new Vector3(...pose.position).distanceTo(new Vector3(...pose.target))).toBeGreaterThan(1)}});
+});

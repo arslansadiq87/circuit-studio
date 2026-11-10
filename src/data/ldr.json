@@ -1,0 +1,99 @@
+{
+  "id": "ldr",
+  "modelId": "ldr",
+  "name": "LDR (light dependent resistor)",
+  "position": [
+    0,
+    55,
+    0
+  ],
+  "rotation": [
+    0,
+    0,
+    0
+  ],
+  "dimensions": [
+    11.999862,
+    10.800499,
+    12
+  ],
+  "pins": [
+    {
+      "id": "P0",
+      "label": "1",
+      "side": "left",
+      "index": 0,
+      "physicalPosition": 1,
+      "electrical": "passive",
+      "localPosition": [
+        -4.5,
+        0,
+        0
+      ],
+      "cadPosition": [
+        -4.5,
+        0,
+        -10
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Measured from the flat lead tip in LDR12.step; interchangeable passive terminals."
+    },
+    {
+      "id": "P1",
+      "label": "2",
+      "side": "right",
+      "index": 0,
+      "physicalPosition": 2,
+      "electrical": "passive",
+      "localPosition": [
+        4.5,
+        0,
+        0
+      ],
+      "cadPosition": [
+        4.5,
+        0,
+        -10
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Measured from the flat lead tip in LDR12.step; interchangeable passive terminals."
+    }
+  ],
+  "geometry": {
+    "kind": "model",
+    "quality": "detailed",
+    "modelFormat": "glb",
+    "modelAssetId": "ldr-cad",
+    "modelUrl": "/models/ldr.glb?v=colors-1",
+    "modelCenter": [
+      0,
+      0,
+      -4
+    ],
+    "origin": [
+      0,
+      0,
+      -6
+    ],
+    "calibrated": true,
+    "verified": true,
+    "geometryVerified": true,
+    "pinPositionsVerified": true,
+    "electricalMappingVerified": true,
+    "pinToleranceMm": 0.03,
+    "modelSource": "Imported STEP CAD",
+    "sourceFilename": "LDR12.step",
+    "sourceSha256": "5414c895b21303324002ee162a867c439a4ae6da292de04dbdc2408c49133b39",
+    "triangleCount": 16416,
+    "meshCount": 3,
+    "materialCount": 3
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "source": "Custom Components\\sonoff-cam-s3w.step",
+  "sourceSha256": "0e112b866edfae8d8f008bce75674de24a278051346c477dbc702c3e99ed4d67",
+  "sourceBoundsMm": {
+    "min": [
+      -28,
+      -28,
+      0
+    ],
+    "max": [
+      28,
+      28,
+      39
+    ],
+    "size": [
+      56,
+      56,
+      39
+    ]
+  },
+  "colorSource": "STEP XCAF colors",
+  "removedHeatSinkFaces": 0,
+  "component": {
+    "id": "sonoff-cam-s3w",
+    "modelId": "sonoff-cam-s3w",
+    "name": "Sonoff CAM-S3W camera",
+    "position": [
+      0,
+      55,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "dimensions": [
+      56.000002,
+      56.000002,
+      39.000215
+    ],
+    "pins": [],
+    "geometry": {
+      "kind": "model",
+      "quality": "detailed",
+      "modelFormat": "glb",
+      "modelAssetId": "sonoff-cam-s3w-cad",
+      "modelUrl": "/models/sonoff-cam-s3w.glb?v=colors-1",
+      "modelCenter": [
+        0,
+        0,
+        19.5
+      ],
+      "origin": [
+        0,
+        0,
+        -19.500107
+      ],
+      "calibrated": true,
+      "verified": true,
+      "geometryVerified": true,
+      "pinPositionsVerified": false,
+      "electricalMappingVerified": false,
+      "pinToleranceMm": 0.05,
+      "modelSource": "Imported STEP CAD",
+      "sourceFilename": "sonoff-cam-s3w.step",
+      "sourceSha256": "0e112b866edfae8d8f008bce75674de24a278051346c477dbc702c3e99ed4d67",
+      "triangleCount": 41690,
+      "meshCount": 1,
+      "materialCount": 2
+    }
+  },
+  "bytes": 205892,
+  "note": "Placeable visual model; no wire pins by request."
+}

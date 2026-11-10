@@ -1,0 +1,87 @@
+{
+  "id": "resistor",
+  "modelId": "resistor",
+  "name": "Resistor",
+  "position": [
+    0,
+    55,
+    0
+  ],
+  "rotation": [
+    0,
+    0,
+    0
+  ],
+  "dimensions": [
+    9.399999618530273,
+    2.339170411984492,
+    2.3400310339167896
+  ],
+  "pins": [
+    {
+      "id": "P0",
+      "label": "1",
+      "side": "left",
+      "index": 0,
+      "physicalPosition": 1,
+      "electrical": "passive",
+      "localPosition": [
+        -4.7,
+        0,
+        -0.000719
+      ],
+      "exitDirection": [
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "P1",
+      "label": "2",
+      "side": "right",
+      "index": 0,
+      "physicalPosition": 2,
+      "electrical": "passive",
+      "localPosition": [
+        4.7,
+        0,
+        -0.000719
+      ],
+      "exitDirection": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "geometry": {
+    "kind": "model",
+    "quality": "detailed",
+    "modelFormat": "glb",
+    "modelAssetId": "resistor-cad",
+    "modelUrl": "/models/resistor.glb",
+    "modelCenter": [
+      0,
+      0,
+      0
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "calibrated": true,
+    "verified": false,
+    "geometryVerified": true,
+    "pinPositionsVerified": true,
+    "electricalMappingVerified": true,
+    "pinToleranceMm": 0.02,
+    "modelSource": "Imported STEP CAD",
+    "sourceFilename": "Resistor.step",
+    "sourceSha256": "372f6171d3129bebece4bdc6482ca02ef770eccde0dc460443f214b4066aed78",
+    "triangleCount": 37210,
+    "meshCount": 1,
+    "materialCount": 3
+  }
+}

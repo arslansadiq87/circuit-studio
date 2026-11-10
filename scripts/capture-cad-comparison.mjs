@@ -1,0 +1,9 @@
+import {chromium} from 'playwright';
+const browser=await chromium.launch({channel:'chrome',headless:true,args:['--enable-gpu','--use-gl=angle','--use-angle=d3d11']});
+const page=await browser.newPage({viewport:{width:1920,height:1080}}),modules={};page.setDefaultTimeout(90000);page.setDefaultNavigationTimeout(90000);
+page.on('request',r=>{for(const [key,path] of Object.entries({store:'/src/store.ts',model:'/src/model.ts',graphics:'/src/graphics.ts'}))if(r.url().includes(path))modules[key]=r.url()});
+try{await page.goto('http://localhost:5173/',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__circuitExportState);await page.evaluate(async modules=>{const {useGraphics}=await import(modules.graphics);useGraphics.getState().set({geometry:'medium'});const {useEditor}=await import(modules.store);useEditor.getState().select('esp32');useEditor.getState().requestCamera('fit-selected')},modules);
+ await page.waitForFunction(()=>{let found=false;window.__circuitExportState.scene.traverse(o=>{if(o.userData.cadVisual&&o.userData.lod==='medium')found=true});return found});await page.waitForTimeout(700);await page.screenshot({path:'artifacts/sprint36-model-optimized.png'});
+ await page.evaluate(async modules=>{const {useEditor}=await import(modules.store);const c=useEditor.getState().project.components[0],url='/models/yd-esp32-s3-v34.glb';useEditor.getState().updateComponent(c.id,{geometry:{...c.geometry,lodUrls:{low:url,medium:url,high:url}}})},modules);
+ await page.waitForFunction(()=>{let count=0;window.__circuitExportState.scene.traverse(o=>{if(o.userData.cadVisual)o.traverse(m=>{if(m.isMesh)count++})});return count>1000});await page.waitForTimeout(800);await page.screenshot({path:'artifacts/sprint36-model-original.png'});console.log('Saved original/medium CAD screenshots with identical camera and lighting');
+}finally{await browser.close()}

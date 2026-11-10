@@ -1,0 +1,1134 @@
+{
+  "sourceSha256": "670a80bce24e2a33c418da38056006d08fbfd25365cd7e8358394e15cd9dfba9",
+  "boundsMm": {
+    "min": [
+      -9.000171617847435,
+      -11.749999597668648,
+      -0.8001759837803901
+    ],
+    "max": [
+      9.000171617847435,
+      13.000000268220901,
+      4.110244534672565
+    ]
+  },
+  "dimensions": [
+    18.00034323569487,
+    24.74999986588955,
+    4.910420518452955
+  ],
+  "triangles": 80764,
+  "materials": 15,
+  "bytes": 413496,
+  "component": {
+    "id": "esp32-c3-zero",
+    "modelId": "esp32-c3-zero",
+    "name": "ESP32-C3 Zero",
+    "position": [
+      0,
+      55,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "pins": [
+      {
+        "id": "P1",
+        "label": "5V",
+        "silkscreen": "5V",
+        "side": "left",
+        "index": 0,
+        "physicalPosition": 1,
+        "electrical": "power-in",
+        "voltage": 5,
+        "aliases": [],
+        "functions": [],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          10.16,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          10.16,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P2",
+        "label": "GND",
+        "silkscreen": "GND",
+        "side": "left",
+        "index": 1,
+        "physicalPosition": 2,
+        "electrical": "ground",
+        "voltage": 0,
+        "aliases": [],
+        "functions": [],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          7.62,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          7.62,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P3",
+        "label": "3V3",
+        "silkscreen": "3V3",
+        "side": "left",
+        "index": 2,
+        "physicalPosition": 3,
+        "electrical": "power-out",
+        "voltage": 3.3,
+        "aliases": [
+          "3.3V"
+        ],
+        "functions": [],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          5.08,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          5.08,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P4",
+        "label": "GPIO0",
+        "silkscreen": "0",
+        "side": "left",
+        "index": 3,
+        "physicalPosition": 4,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO0",
+          "IO0"
+        ],
+        "functions": [
+          "ADC1_CH0"
+        ],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          2.54,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          2.54,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P5",
+        "label": "GPIO1",
+        "silkscreen": "1",
+        "side": "left",
+        "index": 4,
+        "physicalPosition": 5,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO1",
+          "IO1"
+        ],
+        "functions": [
+          "ADC1_CH1"
+        ],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          0,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          0,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P6",
+        "label": "GPIO2",
+        "silkscreen": "2",
+        "side": "left",
+        "index": 5,
+        "physicalPosition": 6,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO2",
+          "IO2"
+        ],
+        "functions": [
+          "ADC1_CH2"
+        ],
+        "notes": "Strapping pin: external levels affect startup.",
+        "localPosition": [
+          -6.995,
+          -2.54,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          -2.54,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P7",
+        "label": "GPIO3",
+        "silkscreen": "3",
+        "side": "left",
+        "index": 6,
+        "physicalPosition": 7,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO3",
+          "IO3"
+        ],
+        "functions": [
+          "ADC1_CH3"
+        ],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          -5.08,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          -5.08,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P8",
+        "label": "GPIO4",
+        "silkscreen": "4",
+        "side": "left",
+        "index": 7,
+        "physicalPosition": 8,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO4",
+          "IO4"
+        ],
+        "functions": [
+          "ADC1_CH4",
+          "JTAG MTMS"
+        ],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          -7.62,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          -7.62,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P9",
+        "label": "GPIO5",
+        "silkscreen": "5",
+        "side": "left",
+        "index": 8,
+        "physicalPosition": 9,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO5",
+          "IO5"
+        ],
+        "functions": [
+          "ADC2_CH0 (check driver support)",
+          "JTAG MTDI"
+        ],
+        "notes": "",
+        "localPosition": [
+          -6.995,
+          -10.16,
+          0.8
+        ],
+        "cadPosition": [
+          -6.995,
+          -10.16,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P10",
+        "label": "GPIO6",
+        "silkscreen": "6",
+        "side": "right",
+        "index": 8,
+        "physicalPosition": 10,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO6",
+          "IO6"
+        ],
+        "functions": [
+          "JTAG MTCK"
+        ],
+        "notes": "",
+        "localPosition": [
+          6.995,
+          -10.16,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          -10.16,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P11",
+        "label": "GPIO7",
+        "silkscreen": "7",
+        "side": "right",
+        "index": 7,
+        "physicalPosition": 11,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO7",
+          "IO7"
+        ],
+        "functions": [
+          "JTAG MTDO"
+        ],
+        "notes": "",
+        "localPosition": [
+          6.995,
+          -7.62,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          -7.62,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P12",
+        "label": "GPIO8",
+        "silkscreen": "8",
+        "side": "right",
+        "index": 6,
+        "physicalPosition": 12,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO8",
+          "IO8"
+        ],
+        "functions": [],
+        "notes": "Strapping pin: external levels affect startup.",
+        "localPosition": [
+          6.995,
+          -5.08,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          -5.08,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P13",
+        "label": "GPIO9",
+        "silkscreen": "9",
+        "side": "right",
+        "index": 5,
+        "physicalPosition": 13,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO9",
+          "IO9"
+        ],
+        "functions": [],
+        "notes": "Strapping pin: external levels affect startup. Shared with the BOOT button.",
+        "localPosition": [
+          6.995,
+          -2.54,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          -2.54,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P14",
+        "label": "GPIO10",
+        "silkscreen": "10",
+        "side": "right",
+        "index": 4,
+        "physicalPosition": 14,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO10",
+          "IO10"
+        ],
+        "functions": [],
+        "notes": "Shared with onboard WS2812 RGB LED data input.",
+        "localPosition": [
+          6.995,
+          0,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          0,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P15",
+        "label": "GPIO18",
+        "silkscreen": "18",
+        "side": "right",
+        "index": 3,
+        "physicalPosition": 15,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO18",
+          "IO18",
+          "USB D-"
+        ],
+        "functions": [
+          "USB D-"
+        ],
+        "notes": "Shared with native USB Serial/JTAG; GPIO use can interrupt USB.",
+        "localPosition": [
+          6.995,
+          2.54,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          2.54,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P16",
+        "label": "GPIO19",
+        "silkscreen": "19",
+        "side": "right",
+        "index": 2,
+        "physicalPosition": 16,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO19",
+          "IO19",
+          "USB D+"
+        ],
+        "functions": [
+          "USB D+"
+        ],
+        "notes": "Shared with native USB Serial/JTAG; GPIO use can interrupt USB.",
+        "localPosition": [
+          6.995,
+          5.08,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          5.08,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P17",
+        "label": "RX / GPIO20",
+        "silkscreen": "RX",
+        "side": "right",
+        "index": 1,
+        "physicalPosition": 17,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO20",
+          "IO20",
+          "RX",
+          "U0RXD"
+        ],
+        "functions": [
+          "UART0 RX"
+        ],
+        "notes": "",
+        "localPosition": [
+          6.995,
+          7.62,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          7.62,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "P18",
+        "label": "TX / GPIO21",
+        "silkscreen": "TX",
+        "side": "right",
+        "index": 0,
+        "physicalPosition": 18,
+        "electrical": "bidirectional",
+        "voltage": 3.3,
+        "aliases": [
+          "GPIO21",
+          "IO21",
+          "TX",
+          "U0TXD"
+        ],
+        "functions": [
+          "UART0 TX"
+        ],
+        "notes": "",
+        "localPosition": [
+          6.995,
+          10.16,
+          0.8
+        ],
+        "cadPosition": [
+          6.995,
+          10.16,
+          0.8
+        ],
+        "exitDirection": [
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "dimensions": [
+      18.00034323569487,
+      24.74999986588955,
+      4.910420518452955
+    ],
+    "geometry": {
+      "kind": "model",
+      "quality": "detailed",
+      "modelFormat": "glb",
+      "modelAssetId": "esp32-c3-zero",
+      "modelUrl": "/models/esp32-c3-zero.glb",
+      "modelCenter": [
+        0,
+        0,
+        0
+      ],
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "calibrated": true,
+      "verified": true,
+      "geometryVerified": true,
+      "pinPositionsVerified": true,
+      "electricalMappingVerified": true,
+      "pinMappingVersion": 1,
+      "pinToleranceMm": 0.02,
+      "modelSource": "Imported STEP CAD / Waveshare ESP32-C3-Zero",
+      "sourceFilename": "ESP32-C3_Zero.step",
+      "sourceSha256": "670a80bce24e2a33c418da38056006d08fbfd25365cd7e8358394e15cd9dfba9",
+      "triangleCount": 80764,
+      "meshCount": 1,
+      "materialCount": 15
+    }
+  },
+  "sourceBoundsMm": {
+    "min": [
+      -9,
+      -13.000000000000002,
+      -1.6
+    ],
+    "max": [
+      9,
+      11.75,
+      3.3100686095120135
+    ],
+    "size": [
+      18,
+      24.75,
+      4.910068609512013
+    ]
+  },
+  "measuredHoles": [
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          9.71,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          10.61,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.8999999999999986,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          7.17,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          8.07,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          4.63,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          5.53,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          2.09,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          2.99,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          -2.99,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          -2.09,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          -5.53,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          -4.63,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          -8.07,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          -7.17,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          -10.61,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          -9.71,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.8999999999999986,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          9.71,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          10.61,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.8999999999999986,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          7.17,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          8.07,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          4.63,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          5.53,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          2.09,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          2.99,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          -2.99,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          -2.09,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          -5.53,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          -4.63,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          -8.07,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          -7.17,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9000000000000004,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          -10.61,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          -9.71,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.8999999999999986,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "boundsMm": {
+        "min": [
+          7.17,
+          -0.45,
+          -1.59
+        ],
+        "max": [
+          8.07,
+          0.45,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9,
+          1.58
+        ]
+      }
+    },
+    {
+      "radius": 0.45,
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "boundsMm": {
+        "min": [
+          -8.07,
+          -0.45,
+          -1.59
+        ],
+        "max": [
+          -7.17,
+          0.45,
+          -0.01
+        ],
+        "size": [
+          0.9000000000000004,
+          0.9,
+          1.58
+        ]
+      }
+    }
+  ],
+  "physicalHardwareVerified": false,
+  "verification": "18 contacts numbered using Waveshare official diagram and schematic; anchors measured on top copper annuli in supplied STEP. Original model has no fitted pin headers.",
+  "references": [
+    "https://docs.waveshare.com/ESP32-C3-Zero",
+    "https://files.waveshare.com/wiki/ESP32-C3-Zero/ESP32-C3-Zero-Sch-V2.pdf",
+    "https://documentation.espressif.com/esp32-c3_datasheet_en.html"
+  ]
+}

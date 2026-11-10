@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "name": "ESP32 WROOM",
+  "source": "Custom Components/ESP32Wroom.glb",
+  "sourceSha256": "872bdd0ce72a66e2c4d7cce59642cfeb43f1bb5e3feb49ae1c7993776c085225",
+  "sourceBytes": 6284216,
+  "sourceBoundsMeters": {
+    "min": [
+      -0.14788776636123657,
+      0.4650515913963318,
+      0.9023445248603821
+    ],
+    "max": [
+      -0.09884145855903625,
+      0.4780516028404236,
+      0.9277445077896118
+    ]
+  },
+  "sourceCenterMeters": [
+    -0.12336461246013641,
+    0.4715515971183777,
+    0.915044516324997
+  ],
+  "output": "public/models/esp32-wroom.glb",
+  "bytes": 441516,
+  "dimensionsMm": [
+    49.04630780220032,
+    25.399542133717993,
+    12.999883518848538
+  ],
+  "boundsMm": {
+    "min": [
+      -24.52315390110016,
+      -12.699771066858997,
+      -6.49994175942427
+    ],
+    "max": [
+      24.52315390110016,
+      12.699771066858997,
+      6.499941759424269
+    ]
+  },
+  "triangles": 65200,
+  "vertices": 78412,
+  "meshes": 1,
+  "primitives": 28,
+  "materials": 28,
+  "textures": 0,
+  "method": "Preserve all source triangles; convert specular/glossiness to core PBR, center, meters to millimeters, rotate Y-up to Z-up, weld/deduplicate and meshopt compress.",
+  "physicalDimensionsVerified": false,
+  "pinPositionsVerified": true,
+  "electricalMappingVerified": true,
+  "pinCount": 38,
+  "pinMappingFile": "/models/esp32-wroom.pins.json",
+  "boardMarking": "NodeMCU ESP-32S V1.1"
+}

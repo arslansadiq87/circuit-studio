@@ -1,0 +1,1793 @@
+{
+  "schemaVersion": 1,
+  "modelId": "yd-esp32-s3-v34",
+  "boardVariant": "YD-ESP32-S3 v34",
+  "silkscreenRevision": "YD-ESP32-S3 2022-VL3",
+  "stepSchema": "AUTOMOTIVE_DESIGN / AP214",
+  "sourceFile": "Custom Components/YD-ESP32-S3 v34.step",
+  "sourceSha256": "edc0685479a0c1a91abd1adf4516ec2784258a58095663b3f4272a125d5cf624",
+  "sourceUnits": "mm",
+  "conversionScale": 1.0,
+  "conversionSettings": {
+    "pipelineVersion": 3,
+    "cadquery": "2.8.0",
+    "unit": "MM",
+    "linearToleranceMm": 0.03,
+    "angularToleranceRadians": 0.1,
+    "preserveAssembly": true,
+    "preserveColors": true,
+    "axisTransform": "gltfXYZ = (cadX, cadZ, -cadY); appXYZ = (gltfX, -gltfY, -gltfZ + 0.5mm)"
+  },
+  "conversionTool": {
+    "name": "CadQuery",
+    "version": "2.8.0",
+    "kernel": "OpenCascade via cadquery-ocp"
+  },
+  "sourceAttribution": "User-supplied STEP; source header author and license fields are blank.",
+  "sourceStructure": {
+    "productDefinitions": 109,
+    "assemblyOccurrences": 227,
+    "solids": 251,
+    "advancedFaces": 8971,
+    "colorDefinitions": 45,
+    "stepFileBytes": 20631414,
+    "temporaryNameDisambiguation": {
+      "productLabelsDisambiguated": 20,
+      "occurrenceLabelsDisambiguated": 17
+    }
+  },
+  "cadBoundsMm": {
+    "min": [
+      -34.8150001,
+      -8.7,
+      -13.975
+    ],
+    "max": [
+      29.208780761,
+      3.21,
+      13.975
+    ],
+    "size": [
+      64.023780861,
+      11.91,
+      27.95
+    ]
+  },
+  "pcbBoundsMm": {
+    "min": [
+      -28.5750001,
+      -1.05,
+      -13.9700001
+    ],
+    "max": [
+      28.5750001,
+      0.05,
+      13.9700001
+    ],
+    "size": [
+      57.1500002,
+      1.1,
+      27.9400002
+    ]
+  },
+  "pcbDimensionsMm": [
+    57.15,
+    27.94,
+    1.1
+  ],
+  "componentDimensionsMm": [
+    64.023780861,
+    27.95,
+    11.91
+  ],
+  "coordinateTransform": {
+    "matrixCadXYZToAppXYZ": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "cadToGltf": "(cadX, cadZ, -cadY)",
+    "gltfToAppRotationDegrees": [
+      180,
+      0,
+      0
+    ],
+    "rotationDegreesCadToApp": [
+      90,
+      0,
+      0
+    ],
+    "translationMm": [
+      0,
+      0,
+      0.5
+    ],
+    "origin": "PCB substrate geometric center; physical pin tips remain at their measured positions"
+  },
+  "headers": {
+    "J1": {
+      "headerOccurrence": "22way PCB Header:1",
+      "occurrenceTranslationMm": [
+        -1.33226762955019e-15,
+        -2.22044604925031e-16,
+        1.3392065234541e-15
+      ],
+      "rowAppY": -12.7,
+      "count": 22,
+      "measuredPitchMm": 2.54,
+      "contacts": [
+        {
+          "cadXYZ": [
+            -26.675,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -27.0,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -26.35,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-1",
+          "label": "3V3",
+          "physicalPosition": 1,
+          "appXYZ": [
+            -26.675,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -24.135,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -24.46,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -23.81,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-2",
+          "label": "3V3",
+          "physicalPosition": 2,
+          "appXYZ": [
+            -24.135,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -21.595,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -21.92,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -21.27,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-3",
+          "label": "RST",
+          "physicalPosition": 3,
+          "appXYZ": [
+            -21.595,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -19.055,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -19.38,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -18.73,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-4",
+          "label": "GPIO4",
+          "physicalPosition": 4,
+          "appXYZ": [
+            -19.055,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -16.515,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -16.84,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -16.19,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-5",
+          "label": "GPIO5",
+          "physicalPosition": 5,
+          "appXYZ": [
+            -16.515,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -13.975000000000001,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -14.3,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -13.65,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-6",
+          "label": "GPIO6",
+          "physicalPosition": 6,
+          "appXYZ": [
+            -13.975,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -11.435000000000002,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -11.76,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -11.11,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-7",
+          "label": "GPIO7",
+          "physicalPosition": 7,
+          "appXYZ": [
+            -11.435,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -8.895000000000001,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -9.22,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -8.57,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-8",
+          "label": "GPIO15",
+          "physicalPosition": 8,
+          "appXYZ": [
+            -8.895,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -6.355000000000002,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -6.68,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -6.03,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-9",
+          "label": "GPIO16",
+          "physicalPosition": 9,
+          "appXYZ": [
+            -6.355,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -3.8150000000000013,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -4.14,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -3.49,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-10",
+          "label": "GPIO17",
+          "physicalPosition": 10,
+          "appXYZ": [
+            -3.815,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -1.2750000000000012,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -1.6,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -0.95,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-11",
+          "label": "GPIO18",
+          "physicalPosition": 11,
+          "appXYZ": [
+            -1.275,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            1.2649999999999986,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              0.94,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              1.59,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-12",
+          "label": "GPIO8",
+          "physicalPosition": 12,
+          "appXYZ": [
+            1.265,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            3.804999999999999,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              3.48,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              4.13,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-13",
+          "label": "GPIO3",
+          "physicalPosition": 13,
+          "appXYZ": [
+            3.805,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            6.344999999999998,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              6.02,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              6.67,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-14",
+          "label": "GPIO46",
+          "physicalPosition": 14,
+          "appXYZ": [
+            6.345,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            8.884999999999998,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              8.56,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              9.21,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-15",
+          "label": "GPIO9",
+          "physicalPosition": 15,
+          "appXYZ": [
+            8.885,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            11.424999999999999,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              11.1,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              11.75,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-16",
+          "label": "GPIO10",
+          "physicalPosition": 16,
+          "appXYZ": [
+            11.425,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            13.964999999999998,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              13.64,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              14.29,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-17",
+          "label": "GPIO11",
+          "physicalPosition": 17,
+          "appXYZ": [
+            13.965,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            16.505,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              16.18,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              16.83,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-18",
+          "label": "GPIO12",
+          "physicalPosition": 18,
+          "appXYZ": [
+            16.505,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            19.045,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              18.72,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              19.37,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-19",
+          "label": "GPIO13",
+          "physicalPosition": 19,
+          "appXYZ": [
+            19.045,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            21.585,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              21.26,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              21.91,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-20",
+          "label": "GPIO14",
+          "physicalPosition": 20,
+          "appXYZ": [
+            21.585,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            24.125,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              23.8,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              24.45,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-21",
+          "label": "5V",
+          "physicalPosition": 21,
+          "appXYZ": [
+            24.125,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            26.665,
+            2.55,
+            12.700000000000001
+          ],
+          "cadBoundsMm": {
+            "min": [
+              26.34,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              26.99,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J1-22",
+          "label": "GND",
+          "physicalPosition": 22,
+          "appXYZ": [
+            26.665,
+            -12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "J3": {
+      "headerOccurrence": "22way PCB Header:2",
+      "occurrenceTranslationMm": [
+        -1.33226762955019e-14,
+        2.22044604925031e-15,
+        -25.4
+      ],
+      "rowAppY": 12.7,
+      "count": 22,
+      "measuredPitchMm": 2.54,
+      "contacts": [
+        {
+          "cadXYZ": [
+            -26.675000000000015,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -27.0,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -26.35,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-1",
+          "label": "GND",
+          "physicalPosition": 1,
+          "appXYZ": [
+            -26.675,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -24.135000000000016,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -24.46,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -23.81,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-2",
+          "label": "TX / GPIO43",
+          "physicalPosition": 2,
+          "appXYZ": [
+            -24.135,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -21.595000000000013,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -21.92,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -21.27,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-3",
+          "label": "RX / GPIO44",
+          "physicalPosition": 3,
+          "appXYZ": [
+            -21.595,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -19.055000000000014,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -19.38,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -18.73,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-4",
+          "label": "GPIO1",
+          "physicalPosition": 4,
+          "appXYZ": [
+            -19.055,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -16.515000000000015,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -16.84,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -16.19,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-5",
+          "label": "GPIO2",
+          "physicalPosition": 5,
+          "appXYZ": [
+            -16.515,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -13.975000000000014,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -14.3,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -13.65,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-6",
+          "label": "GPIO42",
+          "physicalPosition": 6,
+          "appXYZ": [
+            -13.975,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -11.435000000000015,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -11.76,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -11.11,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-7",
+          "label": "GPIO41",
+          "physicalPosition": 7,
+          "appXYZ": [
+            -11.435,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -8.895000000000014,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -9.22,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -8.57,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-8",
+          "label": "GPIO40",
+          "physicalPosition": 8,
+          "appXYZ": [
+            -8.895,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -6.355000000000014,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -6.68,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -6.03,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-9",
+          "label": "GPIO39",
+          "physicalPosition": 9,
+          "appXYZ": [
+            -6.355,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -3.8150000000000133,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -4.14,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -3.49,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-10",
+          "label": "GPIO38",
+          "physicalPosition": 10,
+          "appXYZ": [
+            -3.815,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            -1.2750000000000132,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              -1.6,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              -0.95,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-11",
+          "label": "GPIO37",
+          "physicalPosition": 11,
+          "appXYZ": [
+            -1.275,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            1.2649999999999866,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              0.94,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              1.59,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-12",
+          "label": "GPIO36",
+          "physicalPosition": 12,
+          "appXYZ": [
+            1.265,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            3.804999999999987,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              3.48,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              4.13,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-13",
+          "label": "GPIO35",
+          "physicalPosition": 13,
+          "appXYZ": [
+            3.805,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            6.344999999999986,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              6.02,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              6.67,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-14",
+          "label": "GPIO0",
+          "physicalPosition": 14,
+          "appXYZ": [
+            6.345,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            8.884999999999986,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              8.56,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              9.21,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-15",
+          "label": "GPIO45",
+          "physicalPosition": 15,
+          "appXYZ": [
+            8.885,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            11.424999999999986,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              11.1,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              11.75,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-16",
+          "label": "GPIO48",
+          "physicalPosition": 16,
+          "appXYZ": [
+            11.425,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            13.964999999999986,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              13.64,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              14.29,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-17",
+          "label": "GPIO47",
+          "physicalPosition": 17,
+          "appXYZ": [
+            13.965,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            16.504999999999985,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              16.18,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              16.83,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-18",
+          "label": "GPIO21",
+          "physicalPosition": 18,
+          "appXYZ": [
+            16.505,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            19.044999999999987,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              18.72,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              19.37,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-19",
+          "label": "GPIO20 / USB D+",
+          "physicalPosition": 19,
+          "appXYZ": [
+            19.045,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            21.584999999999987,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              21.26,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              21.91,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-20",
+          "label": "GPIO19 / USB D-",
+          "physicalPosition": 20,
+          "appXYZ": [
+            21.585,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            24.124999999999986,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              23.8,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              24.45,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-21",
+          "label": "GND",
+          "physicalPosition": 21,
+          "appXYZ": [
+            24.125,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cadXYZ": [
+            26.664999999999985,
+            2.550000000000002,
+            -12.7
+          ],
+          "cadBoundsMm": {
+            "min": [
+              26.34,
+              -8.7,
+              12.375
+            ],
+            "max": [
+              26.99,
+              2.55,
+              13.025
+            ],
+            "size": [
+              0.65,
+              11.25,
+              0.65
+            ]
+          },
+          "id": "J3-22",
+          "label": "GND",
+          "physicalPosition": 22,
+          "appXYZ": [
+            26.665,
+            12.7,
+            3.05
+          ],
+          "exitDirectionApp": [
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "verification": {
+    "geometrySource": "Original supplied STEP assembly",
+    "geometryVerified": true,
+    "pinPositionsVerified": true,
+    "electricalLabelsCrossCheckedAgainstReferencePNG": true,
+    "officialDevKitC1Revision": false,
+    "usbConnectorElectricalContactsMapped": false,
+    "notes": "The two 22-position header rows match the labels shown in all four supplied PNG renders. USB-C solder contacts are retained as CAD geometry but are not assigned invented electrical pin identities."
+  },
+  "glb": {
+    "path": "/public/models/yd-esp32-s3-v34.glb",
+    "bytes": 19774332,
+    "glbVersion": 2,
+    "meshCount": 182,
+    "nodeCount": 228,
+    "materialCount": 37,
+    "triangleCount": 736345
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "id": "stepper-24byj-48",
+  "modelId": "stepper-24byj-48",
+  "name": "24BYJ-48 stepper motor",
+  "position": [
+    0,
+    55,
+    0
+  ],
+  "rotation": [
+    0,
+    0,
+    0
+  ],
+  "dimensions": [
+    37.997823,
+    32.519698,
+    30.499611
+  ],
+  "pins": [
+    {
+      "id": "J1-1",
+      "label": "Contact 1",
+      "side": "top",
+      "index": 0,
+      "physicalPosition": 1,
+      "electrical": "passive",
+      "localPosition": [
+        -2.8,
+        -16.26,
+        16.128036
+      ],
+      "cadPosition": [
+        -2.8,
+        16.128231,
+        20.52
+      ],
+      "exitDirection": [
+        0,
+        -1,
+        0
+      ],
+      "notes": "Calibrated to the exposed end of connector contact; winding/common assignment is not identified in STEP."
+    },
+    {
+      "id": "J1-2",
+      "label": "Contact 2",
+      "side": "top",
+      "index": 1,
+      "physicalPosition": 2,
+      "electrical": "passive",
+      "localPosition": [
+        -1.4,
+        -16.26,
+        16.128036
+      ],
+      "cadPosition": [
+        -1.4,
+        16.128231,
+        20.52
+      ],
+      "exitDirection": [
+        0,
+        -1,
+        0
+      ],
+      "notes": "Calibrated to the exposed end of connector contact; winding/common assignment is not identified in STEP."
+    },
+    {
+      "id": "J1-3",
+      "label": "Contact 3",
+      "side": "top",
+      "index": 2,
+      "physicalPosition": 3,
+      "electrical": "passive",
+      "localPosition": [
+        0,
+        -16.26,
+        16.128036
+      ],
+      "cadPosition": [
+        0,
+        16.128231,
+        20.52
+      ],
+      "exitDirection": [
+        0,
+        -1,
+        0
+      ],
+      "notes": "Calibrated to the exposed end of connector contact; winding/common assignment is not identified in STEP."
+    },
+    {
+      "id": "J1-4",
+      "label": "Contact 4",
+      "side": "top",
+      "index": 3,
+      "physicalPosition": 4,
+      "electrical": "passive",
+      "localPosition": [
+        1.4,
+        -16.26,
+        16.128036
+      ],
+      "cadPosition": [
+        1.4,
+        16.128231,
+        20.52
+      ],
+      "exitDirection": [
+        0,
+        -1,
+        0
+      ],
+      "notes": "Calibrated to the exposed end of connector contact; winding/common assignment is not identified in STEP."
+    },
+    {
+      "id": "J1-5",
+      "label": "Contact 5",
+      "side": "top",
+      "index": 4,
+      "physicalPosition": 5,
+      "electrical": "passive",
+      "localPosition": [
+        2.8,
+        -16.26,
+        16.128036
+      ],
+      "cadPosition": [
+        2.8,
+        16.128231,
+        20.52
+      ],
+      "exitDirection": [
+        0,
+        -1,
+        0
+      ],
+      "notes": "Calibrated to the exposed end of connector contact; winding/common assignment is not identified in STEP."
+    }
+  ],
+  "geometry": {
+    "kind": "model",
+    "quality": "detailed",
+    "modelFormat": "glb",
+    "modelAssetId": "stepper-24byj-48-cad",
+    "modelUrl": "/models/stepper-24byj-48.glb?v=colors-1",
+    "modelCenter": [
+      0,
+      -4.26,
+      15.25
+    ],
+    "origin": [
+      0,
+      0,
+      -15.249805
+    ],
+    "calibrated": true,
+    "verified": false,
+    "geometryVerified": true,
+    "pinPositionsVerified": true,
+    "electricalMappingVerified": false,
+    "pinToleranceMm": 0.05,
+    "modelSource": "Imported STEP CAD",
+    "sourceFilename": "stepper 24BYJ-48 .STEP",
+    "sourceSha256": "8e269d6e54892054c347f3c556cc4718d8a192cb4e0f7b4ca20b1a8f0c9ce45f",
+    "triangleCount": 36264,
+    "meshCount": 1,
+    "materialCount": 3
+  }
+}

@@ -1,0 +1,931 @@
+{
+  "version": 1,
+  "sourceSha256": "872bdd0ce72a66e2c4d7cce59642cfeb43f1bb5e3feb49ae1c7993776c085225",
+  "boardMarking": "NodeMCU ESP-32S V1.1",
+  "verifiedDate": "2026-10-29",
+  "anchorSurface": "Centers of the 38 underside male header tips",
+  "pitchMm": 2.54,
+  "rowSpacingMm": 22.899985,
+  "pinPositionsVerified": true,
+  "electricalMappingVerified": true,
+  "electricalEvidence": "All modeled back-side silkscreen labels cross-checked with the classic ESP32 reference header table; board marking read directly from GLB.",
+  "references": [
+    "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html",
+    "https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf"
+  ],
+  "silkscreenEvidence": "artifacts/esp32-wroom-silkscreen-verification.png",
+  "pins": [
+    {
+      "id": "P1",
+      "physicalPosition": 1,
+      "silkscreen": "3V3",
+      "side": "left",
+      "index": 0,
+      "localPosition": [
+        23.184203,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          22.934206,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          23.434199,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P2",
+      "physicalPosition": 2,
+      "silkscreen": "EN",
+      "side": "left",
+      "index": 1,
+      "localPosition": [
+        20.644203,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          20.394206,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          20.8942,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P3",
+      "physicalPosition": 3,
+      "silkscreen": "SVP",
+      "side": "left",
+      "index": 2,
+      "localPosition": [
+        18.104203,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          17.854206,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          18.3542,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P4",
+      "physicalPosition": 4,
+      "silkscreen": "SVN",
+      "side": "left",
+      "index": 3,
+      "localPosition": [
+        15.564203,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          15.314206,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          15.8142,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P5",
+      "physicalPosition": 5,
+      "silkscreen": "P34",
+      "side": "left",
+      "index": 4,
+      "localPosition": [
+        13.0242,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          12.774199,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          13.2742,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P6",
+      "physicalPosition": 6,
+      "silkscreen": "P35",
+      "side": "left",
+      "index": 5,
+      "localPosition": [
+        10.4842,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          10.234199,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          10.7342,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P7",
+      "physicalPosition": 7,
+      "silkscreen": "P32",
+      "side": "left",
+      "index": 6,
+      "localPosition": [
+        7.9442,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          7.6942,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          8.194201,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P8",
+      "physicalPosition": 8,
+      "silkscreen": "P33",
+      "side": "left",
+      "index": 7,
+      "localPosition": [
+        5.4042,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          5.1542,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          5.654201,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P9",
+      "physicalPosition": 9,
+      "silkscreen": "P25",
+      "side": "left",
+      "index": 8,
+      "localPosition": [
+        2.864201,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          2.6142,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          3.114201,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P10",
+      "physicalPosition": 10,
+      "silkscreen": "P26",
+      "side": "left",
+      "index": 9,
+      "localPosition": [
+        0.324201,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          0.0742,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          0.574201,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P11",
+      "physicalPosition": 11,
+      "silkscreen": "P27",
+      "side": "left",
+      "index": 10,
+      "localPosition": [
+        -2.215795,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -2.465799,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -1.965791,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P12",
+      "physicalPosition": 12,
+      "silkscreen": "P14",
+      "side": "left",
+      "index": 11,
+      "localPosition": [
+        -4.755795,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -5.005792,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -4.505798,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P13",
+      "physicalPosition": 13,
+      "silkscreen": "P12",
+      "side": "left",
+      "index": 12,
+      "localPosition": [
+        -7.295795,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -7.545799,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -7.045791,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P14",
+      "physicalPosition": 14,
+      "silkscreen": "GND",
+      "side": "left",
+      "index": 13,
+      "localPosition": [
+        -9.835795,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -10.085791,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -9.585798,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P15",
+      "physicalPosition": 15,
+      "silkscreen": "P13",
+      "side": "left",
+      "index": 14,
+      "localPosition": [
+        -12.375794,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -12.625799,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -12.12579,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P16",
+      "physicalPosition": 16,
+      "silkscreen": "SD2",
+      "side": "left",
+      "index": 15,
+      "localPosition": [
+        -14.915794,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -15.165791,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -14.665797,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P17",
+      "physicalPosition": 17,
+      "silkscreen": "SD3",
+      "side": "left",
+      "index": 16,
+      "localPosition": [
+        -17.455801,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -17.705798,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -17.205805,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P18",
+      "physicalPosition": 18,
+      "silkscreen": "CMD",
+      "side": "left",
+      "index": 17,
+      "localPosition": [
+        -19.995794,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -20.24579,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -19.745797,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P19",
+      "physicalPosition": 19,
+      "silkscreen": "5V",
+      "side": "left",
+      "index": 18,
+      "localPosition": [
+        -22.535801,
+        11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -22.785798,
+          11.199981,
+          -6.500006
+        ],
+        "max": [
+          -22.285804,
+          11.700004,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P20",
+      "physicalPosition": 20,
+      "silkscreen": "CLK",
+      "side": "right",
+      "index": 18,
+      "localPosition": [
+        -22.535801,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -22.785798,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -22.285804,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P21",
+      "physicalPosition": 21,
+      "silkscreen": "SD0",
+      "side": "right",
+      "index": 17,
+      "localPosition": [
+        -19.995794,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -20.24579,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -19.745797,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P22",
+      "physicalPosition": 22,
+      "silkscreen": "SD1",
+      "side": "right",
+      "index": 16,
+      "localPosition": [
+        -17.455801,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -17.705798,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -17.205805,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P23",
+      "physicalPosition": 23,
+      "silkscreen": "P15",
+      "side": "right",
+      "index": 15,
+      "localPosition": [
+        -14.915794,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -15.165791,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -14.665797,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P24",
+      "physicalPosition": 24,
+      "silkscreen": "P2",
+      "side": "right",
+      "index": 14,
+      "localPosition": [
+        -12.375794,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -12.625799,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -12.12579,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P25",
+      "physicalPosition": 25,
+      "silkscreen": "P0",
+      "side": "right",
+      "index": 13,
+      "localPosition": [
+        -9.835795,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -10.085791,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -9.585798,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P26",
+      "physicalPosition": 26,
+      "silkscreen": "P4",
+      "side": "right",
+      "index": 12,
+      "localPosition": [
+        -7.295795,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -7.545799,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -7.045791,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P27",
+      "physicalPosition": 27,
+      "silkscreen": "P16",
+      "side": "right",
+      "index": 11,
+      "localPosition": [
+        -4.755795,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -5.005792,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -4.505798,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P28",
+      "physicalPosition": 28,
+      "silkscreen": "P17",
+      "side": "right",
+      "index": 10,
+      "localPosition": [
+        -2.215795,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          -2.465799,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          -1.965791,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P29",
+      "physicalPosition": 29,
+      "silkscreen": "P5",
+      "side": "right",
+      "index": 9,
+      "localPosition": [
+        0.324201,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          0.0742,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          0.574201,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P30",
+      "physicalPosition": 30,
+      "silkscreen": "P18",
+      "side": "right",
+      "index": 8,
+      "localPosition": [
+        2.864201,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          2.6142,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          3.114201,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P31",
+      "physicalPosition": 31,
+      "silkscreen": "P19",
+      "side": "right",
+      "index": 7,
+      "localPosition": [
+        5.4042,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          5.1542,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          5.654201,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P32",
+      "physicalPosition": 32,
+      "silkscreen": "GND",
+      "side": "right",
+      "index": 6,
+      "localPosition": [
+        7.9442,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          7.6942,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          8.194201,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P33",
+      "physicalPosition": 33,
+      "silkscreen": "P21",
+      "side": "right",
+      "index": 5,
+      "localPosition": [
+        10.4842,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          10.234199,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          10.7342,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P34",
+      "physicalPosition": 34,
+      "silkscreen": "RX",
+      "side": "right",
+      "index": 4,
+      "localPosition": [
+        13.0242,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          12.774199,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          13.2742,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P35",
+      "physicalPosition": 35,
+      "silkscreen": "TX",
+      "side": "right",
+      "index": 3,
+      "localPosition": [
+        15.564203,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          15.314206,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          15.8142,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P36",
+      "physicalPosition": 36,
+      "silkscreen": "P22",
+      "side": "right",
+      "index": 2,
+      "localPosition": [
+        18.104203,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          17.854206,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          18.3542,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P37",
+      "physicalPosition": 37,
+      "silkscreen": "P23",
+      "side": "right",
+      "index": 1,
+      "localPosition": [
+        20.644203,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          20.394206,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          20.8942,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    },
+    {
+      "id": "P38",
+      "physicalPosition": 38,
+      "silkscreen": "GND",
+      "side": "right",
+      "index": 0,
+      "localPosition": [
+        23.184203,
+        -11.449993,
+        -6.500006
+      ],
+      "shaftBounds": {
+        "min": [
+          22.934206,
+          -11.700004,
+          -6.500006
+        ],
+        "max": [
+          23.434199,
+          -11.199981,
+          -0.29999
+        ]
+      }
+    }
+  ]
+}

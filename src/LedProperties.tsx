@@ -1,0 +1,6 @@
+import type {Component} from './model';
+import {useEditor} from './store';
+export function LedProperties({component}:{component:Component}){
+ const update=useEditor(s=>s.updateComponent),setMode=useEditor(s=>s.setMode),clickPin=useEditor(s=>s.clickPin);
+ return <div className="inspector-section"><div className="section-title">LED APPEARANCE</div><label className="field-row"><span>Lens color</span><input aria-label="LED lens color" className="color-input" type="color" value={component.color??'#00ff00'} onChange={e=>update(component.id,{color:e.target.value})}/><span style={{flex:'none',fontSize:10}}>{(component.color??'#00ff00').toUpperCase()}</span></label><p className="resistor-note">Choose any lens color. Each LED keeps its own color; the leads stay metallic.</p><div className="section-title">LEAD CONTACTS <span className="verified-pill">CAD POSITIONS</span></div>{component.pins.map(p=><div className="property-row" key={p.id}><button className="secondary-action" aria-label={`Connect LED ${p.id}`} onClick={()=>{setMode('wire');clickPin(component.id,p.id)}}>{p.label}</button><strong>{p.id}</strong></div>)}<p className="resistor-note">Two measured lead tips. Anode/cathode polarity is unverified for this supplied model.</p></div>
+}

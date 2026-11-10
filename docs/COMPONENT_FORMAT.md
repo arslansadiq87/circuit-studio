@@ -1,0 +1,11 @@
+# Custom component format
+
+The validated custom library manifest is defined by `LibraryPartSchema` in `src/library.ts`. A record includes a stable ID, name, category, physical `[width,height,thickness]` in millimetres, import format (`glb`, `gltf`, `obj`, `stl`) or `procedural-pcb`, optional base64 asset bytes, geometry metadata and ordered pin definitions. The exported `.c3dcomponent` wrapper is JSON `{ format: "c3d-component", version: 1, part }`; it includes the model bytes when the component was imported. It is portable and uncompressed.
+
+Pin IDs are unique identifiers within the part. Each pin keeps a visible label, side/index, local `[x,y,z]` position in millimetres, local Euler orientation in degrees, electrical type, optional voltage rating and wire exit vector. The component transform applies after the pin local coordinate. Pin position edits therefore follow part translation and rotation without wire endpoint drift.
+
+Imported mesh geometry is recentered on its bounding-box center, then independently scaled on X/Y/Z to the user-calibrated dimensions. A saved model orientation rotates that geometry in local coordinates. The origin offset is stored in local millimetres and changes where the model sits relative to the component origin; pin coordinates are expressed in the resulting origin coordinate system. GLB/glTF/OBJ/STL bytes are stored as base64 in IndexedDB, never as blob URLs. Files/resources above 80 MB per import selection are rejected.
+
+A glTF file may reference sidecars. The import dialog allows selecting multiple files and embeds referenced buffers/images into data URIs before storing the glTF JSON. Every external URI must match a selected filename; otherwise import fails with the unresolved sidecar name. OBJ triangle geometry and STL surface geometry are supported. OBJ/MTL material sidecars are not currently resolved.
+
+Procedural PCBs store their dimensions, color, thickness, header row count, pitch, and explicit editable pin positions. The browser library persists in IndexedDB. Export/import packages let users move parts between browser profiles. Project files additionally embed model data for referenced custom parts so projects reopen without a preinstalled library entry.

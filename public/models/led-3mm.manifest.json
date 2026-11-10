@@ -1,0 +1,114 @@
+{
+  "source": "Custom Components/LED 3mm.STEP",
+  "sourceSha256": "9b3c17acbc655a13d4fb19dfac9b68919dee6e0d30adb7c58ccdd92277d6528f",
+  "component": {
+    "id": "led",
+    "modelId": "led",
+    "name": "3 mm LED",
+    "color": "#00ff00",
+    "position": [
+      0,
+      55,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "dimensions": [
+      3.3306375316629535,
+      3.500045777764213,
+      6.499999999999998
+    ],
+    "pins": [
+      {
+        "id": "P0",
+        "label": "Terminal 1",
+        "side": "left",
+        "index": 0,
+        "physicalPosition": 1,
+        "electrical": "passive",
+        "localPosition": [
+          -0.75,
+          0,
+          -2
+        ],
+        "exitDirection": [
+          0,
+          0,
+          -1
+        ],
+        "notes": "Position measured from STEP lead tip. Anode/cathode identity is not verified by this source."
+      },
+      {
+        "id": "P1",
+        "label": "Terminal 2",
+        "side": "right",
+        "index": 0,
+        "physicalPosition": 2,
+        "electrical": "passive",
+        "localPosition": [
+          0.7,
+          0,
+          -2
+        ],
+        "exitDirection": [
+          0,
+          0,
+          -1
+        ],
+        "notes": "Position measured from STEP lead tip. Anode/cathode identity is not verified by this source."
+      }
+    ],
+    "geometry": {
+      "kind": "model",
+      "quality": "detailed",
+      "modelFormat": "glb",
+      "modelAssetId": "led-3mm",
+      "modelUrl": "/models/led-3mm.glb",
+      "modelCenter": [
+        0,
+        0,
+        0
+      ],
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "calibrated": true,
+      "verified": false,
+      "geometryVerified": true,
+      "pinPositionsVerified": true,
+      "electricalMappingVerified": false,
+      "pinToleranceMm": 0.02,
+      "sourceFilename": "LED 3mm.STEP",
+      "sourceSha256": "9b3c17acbc655a13d4fb19dfac9b68919dee6e0d30adb7c58ccdd92277d6528f",
+      "modelSource": "Imported STEP CAD",
+      "meshCount": 1,
+      "triangleCount": 6044,
+      "materialCount": 2
+    }
+  },
+  "bytes": 28200,
+  "sourceBoundsMm": {
+    "min": [
+      -1.75,
+      -2,
+      -1.75
+    ],
+    "max": [
+      1.5811388300841898,
+      4.5,
+      1.75
+    ],
+    "size": [
+      3.33113883008419,
+      6.5,
+      3.5
+    ]
+  },
+  "lensMaterial": "LED_LENS",
+  "notes": "Source lens material alone is recolored per instance. Both leads are equal length in this model; electrical polarity has not been independently verified."
+}

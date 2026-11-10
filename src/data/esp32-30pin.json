@@ -1,0 +1,1068 @@
+{
+  "id": "esp32-30pin",
+  "modelId": "esp32-30pin",
+  "name": "ESP32 WROOM-32 (30 pin)",
+  "position": [
+    0,
+    55,
+    0
+  ],
+  "rotation": [
+    0,
+    0,
+    0
+  ],
+  "pins": [
+    {
+      "id": "J1-1",
+      "label": "EN",
+      "silkscreen": "EN",
+      "side": "left",
+      "index": 0,
+      "physicalPosition": 1,
+      "electrical": "input",
+      "voltage": 3.3,
+      "functions": [
+        "CHIP_PU / reset"
+      ],
+      "aliases": [
+        "EN",
+        "RESET",
+        "CHIP_PU"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700082,
+        19.462951,
+        -9.367698
+      ],
+      "cadPosition": [
+        -12.700082,
+        19.462951,
+        -9.367698
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-2",
+      "label": "VP / GPIO36",
+      "silkscreen": "VP",
+      "side": "left",
+      "index": 1,
+      "physicalPosition": 2,
+      "electrical": "input",
+      "voltage": 3.3,
+      "functions": [
+        "ADC1_CH0"
+      ],
+      "aliases": [
+        "VP",
+        "GPIO36",
+        "IO36"
+      ],
+      "notes": "Input only; no internal pull-up or pull-down.",
+      "localPosition": [
+        -12.700082,
+        16.922951,
+        -9.367698
+      ],
+      "cadPosition": [
+        -12.700082,
+        16.922951,
+        -9.367698
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-3",
+      "label": "VN / GPIO39",
+      "silkscreen": "VN",
+      "side": "left",
+      "index": 2,
+      "physicalPosition": 3,
+      "electrical": "input",
+      "voltage": 3.3,
+      "functions": [
+        "ADC1_CH3"
+      ],
+      "aliases": [
+        "VN",
+        "GPIO39",
+        "IO39"
+      ],
+      "notes": "Input only; no internal pull-up or pull-down.",
+      "localPosition": [
+        -12.700082,
+        14.382951,
+        -9.367698
+      ],
+      "cadPosition": [
+        -12.700082,
+        14.382951,
+        -9.367698
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-4",
+      "label": "GPIO34",
+      "silkscreen": "34",
+      "side": "left",
+      "index": 3,
+      "physicalPosition": 4,
+      "electrical": "input",
+      "voltage": 3.3,
+      "functions": [
+        "ADC1_CH6"
+      ],
+      "aliases": [
+        "34",
+        "GPIO34",
+        "IO34"
+      ],
+      "notes": "Input only; no internal pull-up or pull-down.",
+      "localPosition": [
+        -12.700082,
+        11.842951,
+        -9.367699
+      ],
+      "cadPosition": [
+        -12.700082,
+        11.842951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-5",
+      "label": "GPIO35",
+      "silkscreen": "35",
+      "side": "left",
+      "index": 4,
+      "physicalPosition": 5,
+      "electrical": "input",
+      "voltage": 3.3,
+      "functions": [
+        "ADC1_CH7"
+      ],
+      "aliases": [
+        "35",
+        "GPIO35",
+        "IO35"
+      ],
+      "notes": "Input only; no internal pull-up or pull-down.",
+      "localPosition": [
+        -12.700082,
+        9.302951,
+        -9.367699
+      ],
+      "cadPosition": [
+        -12.700082,
+        9.302951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-6",
+      "label": "GPIO32",
+      "silkscreen": "32",
+      "side": "left",
+      "index": 5,
+      "physicalPosition": 6,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC1_CH4",
+        "TOUCH9"
+      ],
+      "aliases": [
+        "32",
+        "GPIO32",
+        "IO32"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700082,
+        6.762951,
+        -9.367699
+      ],
+      "cadPosition": [
+        -12.700082,
+        6.762951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-7",
+      "label": "GPIO33",
+      "silkscreen": "33",
+      "side": "left",
+      "index": 6,
+      "physicalPosition": 7,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC1_CH5",
+        "TOUCH8"
+      ],
+      "aliases": [
+        "33",
+        "GPIO33",
+        "IO33"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        4.222951,
+        -9.367699
+      ],
+      "cadPosition": [
+        -12.700083,
+        4.222951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-8",
+      "label": "GPIO25",
+      "silkscreen": "25",
+      "side": "left",
+      "index": 7,
+      "physicalPosition": 8,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH8",
+        "DAC1"
+      ],
+      "aliases": [
+        "25",
+        "GPIO25",
+        "IO25"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        1.682951,
+        -9.3677
+      ],
+      "cadPosition": [
+        -12.700083,
+        1.682951,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-9",
+      "label": "GPIO26",
+      "silkscreen": "26",
+      "side": "left",
+      "index": 8,
+      "physicalPosition": 9,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH9",
+        "DAC2"
+      ],
+      "aliases": [
+        "26",
+        "GPIO26",
+        "IO26"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        -0.857049,
+        -9.3677
+      ],
+      "cadPosition": [
+        -12.700083,
+        -0.857049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-10",
+      "label": "GPIO27",
+      "silkscreen": "27",
+      "side": "left",
+      "index": 9,
+      "physicalPosition": 10,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH7",
+        "TOUCH7"
+      ],
+      "aliases": [
+        "27",
+        "GPIO27",
+        "IO27"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        -3.397049,
+        -9.3677
+      ],
+      "cadPosition": [
+        -12.700083,
+        -3.397049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-11",
+      "label": "GPIO14",
+      "silkscreen": "14",
+      "side": "left",
+      "index": 10,
+      "physicalPosition": 11,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH6",
+        "TOUCH6"
+      ],
+      "aliases": [
+        "14",
+        "GPIO14",
+        "IO14"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        -5.937049,
+        -9.3677
+      ],
+      "cadPosition": [
+        -12.700083,
+        -5.937049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-12",
+      "label": "GPIO12",
+      "silkscreen": "12",
+      "side": "left",
+      "index": 11,
+      "physicalPosition": 12,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH5",
+        "TOUCH5"
+      ],
+      "aliases": [
+        "12",
+        "GPIO12",
+        "IO12"
+      ],
+      "notes": "Boot strapping pin; external levels affect startup.",
+      "localPosition": [
+        -12.700083,
+        -8.477049,
+        -9.3677
+      ],
+      "cadPosition": [
+        -12.700083,
+        -8.477049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-13",
+      "label": "GPIO13",
+      "silkscreen": "13",
+      "side": "left",
+      "index": 12,
+      "physicalPosition": 13,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH4",
+        "TOUCH4"
+      ],
+      "aliases": [
+        "13",
+        "GPIO13",
+        "IO13"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        -11.017049,
+        -9.367701
+      ],
+      "cadPosition": [
+        -12.700083,
+        -11.017049,
+        -9.367701
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-14",
+      "label": "GND",
+      "silkscreen": "GND",
+      "side": "left",
+      "index": 13,
+      "physicalPosition": 14,
+      "electrical": "ground",
+      "voltage": 0,
+      "functions": [],
+      "aliases": [
+        "GND"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        -13.557049,
+        -9.367701
+      ],
+      "cadPosition": [
+        -12.700083,
+        -13.557049,
+        -9.367701
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-15",
+      "label": "VIN",
+      "silkscreen": "VIN",
+      "side": "left",
+      "index": 14,
+      "physicalPosition": 15,
+      "electrical": "power-in",
+      "voltage": 5,
+      "functions": [],
+      "aliases": [
+        "VIN",
+        "5V"
+      ],
+      "notes": "",
+      "localPosition": [
+        -12.700083,
+        -16.097049,
+        -9.367701
+      ],
+      "cadPosition": [
+        -12.700083,
+        -16.097049,
+        -9.367701
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-1",
+      "label": "GPIO23",
+      "silkscreen": "23",
+      "side": "right",
+      "index": 0,
+      "physicalPosition": 1,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "Default Arduino SPI MOSI"
+      ],
+      "aliases": [
+        "23",
+        "GPIO23",
+        "IO23"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.69992,
+        19.462951,
+        -9.367698
+      ],
+      "cadPosition": [
+        12.69992,
+        19.462951,
+        -9.367698
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-2",
+      "label": "GPIO22",
+      "silkscreen": "22",
+      "side": "right",
+      "index": 1,
+      "physicalPosition": 2,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "Default Arduino I2C SCL"
+      ],
+      "aliases": [
+        "22",
+        "GPIO22",
+        "IO22"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.69992,
+        16.922951,
+        -9.367698
+      ],
+      "cadPosition": [
+        12.69992,
+        16.922951,
+        -9.367698
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-3",
+      "label": "TX0 / GPIO1",
+      "silkscreen": "TX0",
+      "side": "right",
+      "index": 2,
+      "physicalPosition": 3,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "UART0 TX"
+      ],
+      "aliases": [
+        "TX0",
+        "GPIO1",
+        "IO1"
+      ],
+      "notes": "USB-to-UART bridge signals; this classic ESP32 has no native USB GPIO pins.",
+      "localPosition": [
+        12.699919,
+        14.382951,
+        -9.367698
+      ],
+      "cadPosition": [
+        12.699919,
+        14.382951,
+        -9.367698
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-4",
+      "label": "RX0 / GPIO3",
+      "silkscreen": "RX0",
+      "side": "right",
+      "index": 3,
+      "physicalPosition": 4,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "UART0 RX"
+      ],
+      "aliases": [
+        "RX0",
+        "GPIO3",
+        "IO3"
+      ],
+      "notes": "USB-to-UART bridge signals; this classic ESP32 has no native USB GPIO pins.",
+      "localPosition": [
+        12.699919,
+        11.842951,
+        -9.367699
+      ],
+      "cadPosition": [
+        12.699919,
+        11.842951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-5",
+      "label": "GPIO21",
+      "silkscreen": "21",
+      "side": "right",
+      "index": 4,
+      "physicalPosition": 5,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "Default Arduino I2C SDA"
+      ],
+      "aliases": [
+        "21",
+        "GPIO21",
+        "IO21"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699919,
+        9.302951,
+        -9.367699
+      ],
+      "cadPosition": [
+        12.699919,
+        9.302951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-6",
+      "label": "GPIO19",
+      "silkscreen": "19",
+      "side": "right",
+      "index": 5,
+      "physicalPosition": 6,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "Default Arduino SPI MISO"
+      ],
+      "aliases": [
+        "19",
+        "GPIO19",
+        "IO19"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699919,
+        6.762951,
+        -9.367699
+      ],
+      "cadPosition": [
+        12.699919,
+        6.762951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-7",
+      "label": "GPIO18",
+      "silkscreen": "18",
+      "side": "right",
+      "index": 6,
+      "physicalPosition": 7,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "Default Arduino SPI SCK"
+      ],
+      "aliases": [
+        "18",
+        "GPIO18",
+        "IO18"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699919,
+        4.222951,
+        -9.367699
+      ],
+      "cadPosition": [
+        12.699919,
+        4.222951,
+        -9.367699
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-8",
+      "label": "GPIO5",
+      "silkscreen": "5",
+      "side": "right",
+      "index": 7,
+      "physicalPosition": 8,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "Default Arduino SPI CS"
+      ],
+      "aliases": [
+        "5",
+        "GPIO5",
+        "IO5"
+      ],
+      "notes": "Boot strapping pin; external levels affect startup.",
+      "localPosition": [
+        12.699919,
+        1.682951,
+        -9.3677
+      ],
+      "cadPosition": [
+        12.699919,
+        1.682951,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-9",
+      "label": "TX2 / GPIO17",
+      "silkscreen": "TX2",
+      "side": "right",
+      "index": 8,
+      "physicalPosition": 9,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "UART2 TX"
+      ],
+      "aliases": [
+        "TX2",
+        "GPIO17",
+        "IO17"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699919,
+        -0.857049,
+        -9.3677
+      ],
+      "cadPosition": [
+        12.699919,
+        -0.857049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-10",
+      "label": "RX2 / GPIO16",
+      "silkscreen": "RX2",
+      "side": "right",
+      "index": 9,
+      "physicalPosition": 10,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "UART2 RX"
+      ],
+      "aliases": [
+        "RX2",
+        "GPIO16",
+        "IO16"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699919,
+        -3.397049,
+        -9.3677
+      ],
+      "cadPosition": [
+        12.699919,
+        -3.397049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-11",
+      "label": "GPIO4",
+      "silkscreen": "4",
+      "side": "right",
+      "index": 10,
+      "physicalPosition": 11,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH0",
+        "TOUCH0"
+      ],
+      "aliases": [
+        "4",
+        "GPIO4",
+        "IO4"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699919,
+        -5.937049,
+        -9.3677
+      ],
+      "cadPosition": [
+        12.699919,
+        -5.937049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-12",
+      "label": "GPIO2",
+      "silkscreen": "2",
+      "side": "right",
+      "index": 11,
+      "physicalPosition": 12,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH2",
+        "TOUCH2"
+      ],
+      "aliases": [
+        "2",
+        "GPIO2",
+        "IO2"
+      ],
+      "notes": "Boot strapping pin; external levels affect startup.",
+      "localPosition": [
+        12.699918,
+        -8.477049,
+        -9.3677
+      ],
+      "cadPosition": [
+        12.699918,
+        -8.477049,
+        -9.3677
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-13",
+      "label": "GPIO15",
+      "silkscreen": "15",
+      "side": "right",
+      "index": 12,
+      "physicalPosition": 13,
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "functions": [
+        "ADC2_CH3",
+        "TOUCH3"
+      ],
+      "aliases": [
+        "15",
+        "GPIO15",
+        "IO15"
+      ],
+      "notes": "Boot strapping pin; external levels affect startup.",
+      "localPosition": [
+        12.699918,
+        -11.017049,
+        -9.367701
+      ],
+      "cadPosition": [
+        12.699918,
+        -11.017049,
+        -9.367701
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-14",
+      "label": "GND",
+      "silkscreen": "GND",
+      "side": "right",
+      "index": 13,
+      "physicalPosition": 14,
+      "electrical": "ground",
+      "voltage": 0,
+      "functions": [],
+      "aliases": [
+        "GND"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699918,
+        -13.557049,
+        -9.367701
+      ],
+      "cadPosition": [
+        12.699918,
+        -13.557049,
+        -9.367701
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-15",
+      "label": "3V3",
+      "silkscreen": "3V3",
+      "side": "right",
+      "index": 14,
+      "physicalPosition": 15,
+      "electrical": "power-out",
+      "voltage": 3.3,
+      "functions": [],
+      "aliases": [
+        "3V3"
+      ],
+      "notes": "",
+      "localPosition": [
+        12.699918,
+        -16.097049,
+        -9.367701
+      ],
+      "cadPosition": [
+        12.699918,
+        -16.097049,
+        -9.367701
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    }
+  ],
+  "dimensions": [
+    29.00015345058655,
+    52.96427012325778,
+    13.527594493623518
+  ],
+  "geometry": {
+    "kind": "model",
+    "quality": "detailed",
+    "modelFormat": "glb",
+    "modelAssetId": "esp32-30pin",
+    "modelUrl": "/models/esp32-30pin.glb",
+    "modelCenter": [
+      0,
+      0,
+      0
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "calibrated": true,
+    "verified": false,
+    "geometryVerified": true,
+    "pinPositionsVerified": true,
+    "electricalMappingVerified": false,
+    "pinMappingVersion": 1,
+    "pinToleranceMm": 0.02,
+    "modelSource": "Imported STEP CAD / user-selected standard 30-pin WROOM-32 mapping",
+    "sourceFilename": "esp32_30pin.step",
+    "sourceSha256": "477be34622303be57819480d08a5448d0c9b80476f8dd5f3bd110cc7c9769916",
+    "triangleCount": 181098,
+    "meshCount": 1,
+    "materialCount": 23
+  }
+}

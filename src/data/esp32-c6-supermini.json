@@ -1,0 +1,892 @@
+{
+  "id": "esp32-c6-supermini",
+  "modelId": "esp32-c6-supermini",
+  "name": "ESP32-C6 Supermini",
+  "position": [
+    0,
+    55,
+    0
+  ],
+  "rotation": [
+    0,
+    0,
+    0
+  ],
+  "pins": [
+    {
+      "id": "J1-1",
+      "silkscreen": "5V",
+      "side": "left",
+      "index": 0,
+      "physicalPosition": 1,
+      "label": "5V",
+      "electrical": "power-in",
+      "voltage": 5,
+      "aliases": [],
+      "localPosition": [
+        -7.613781,
+        -11.429351,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        -11.429351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-2",
+      "silkscreen": "GND",
+      "side": "left",
+      "index": 1,
+      "physicalPosition": 2,
+      "label": "GND",
+      "electrical": "ground",
+      "voltage": 0,
+      "aliases": [],
+      "localPosition": [
+        -7.613781,
+        -8.889351,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        -8.889351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-3",
+      "silkscreen": "3V3",
+      "side": "left",
+      "index": 2,
+      "physicalPosition": 3,
+      "label": "3V3",
+      "electrical": "power-in",
+      "voltage": 3.3,
+      "aliases": [
+        "3.3V"
+      ],
+      "localPosition": [
+        -7.613781,
+        -6.349351,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        -6.349351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-4",
+      "silkscreen": "20",
+      "side": "left",
+      "index": 3,
+      "physicalPosition": 4,
+      "label": "GPIO20",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO20",
+        "IO20"
+      ],
+      "functions": [],
+      "notes": "",
+      "localPosition": [
+        -7.613781,
+        -3.809351,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        -3.809351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-5",
+      "silkscreen": "19",
+      "side": "left",
+      "index": 4,
+      "physicalPosition": 5,
+      "label": "GPIO19",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO19",
+        "IO19"
+      ],
+      "functions": [],
+      "notes": "",
+      "localPosition": [
+        -7.613781,
+        -1.269351,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        -1.269351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-6",
+      "silkscreen": "18",
+      "side": "left",
+      "index": 5,
+      "physicalPosition": 6,
+      "label": "GPIO18",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO18",
+        "IO18"
+      ],
+      "functions": [],
+      "notes": "",
+      "localPosition": [
+        -7.613781,
+        1.270649,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        1.270649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-7",
+      "silkscreen": "15",
+      "side": "left",
+      "index": 6,
+      "physicalPosition": 7,
+      "label": "GPIO15",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO15",
+        "IO15"
+      ],
+      "functions": [],
+      "notes": "Strapping pin: external levels affect startup.",
+      "localPosition": [
+        -7.613781,
+        3.810649,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        3.810649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-8",
+      "silkscreen": "14",
+      "side": "left",
+      "index": 7,
+      "physicalPosition": 8,
+      "label": "GPIO14",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO14",
+        "IO14"
+      ],
+      "functions": [],
+      "notes": "",
+      "localPosition": [
+        -7.613781,
+        6.350649,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        6.350649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-9",
+      "silkscreen": "9",
+      "side": "left",
+      "index": 8,
+      "physicalPosition": 9,
+      "label": "GPIO9",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO9",
+        "IO9"
+      ],
+      "functions": [],
+      "notes": "Strapping pin: external levels affect startup. GPIO9 participates in boot-mode selection.",
+      "localPosition": [
+        -7.613781,
+        8.890649,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        8.890649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J1-10",
+      "silkscreen": "8",
+      "side": "left",
+      "index": 9,
+      "physicalPosition": 10,
+      "label": "GPIO8",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO8",
+        "IO8"
+      ],
+      "functions": [],
+      "notes": "Strapping pin: external levels affect startup.",
+      "localPosition": [
+        -7.613781,
+        11.430649,
+        -9.175
+      ],
+      "cadPosition": [
+        -7.613781,
+        11.430649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-1",
+      "silkscreen": "TX",
+      "side": "right",
+      "index": 0,
+      "physicalPosition": 1,
+      "label": "TX / GPIO16",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO16",
+        "IO16",
+        "TX",
+        "U0TXD"
+      ],
+      "functions": [
+        "UART0 TX"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        -11.429351,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        -11.429351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-2",
+      "silkscreen": "RX",
+      "side": "right",
+      "index": 1,
+      "physicalPosition": 2,
+      "label": "RX / GPIO17",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO17",
+        "IO17",
+        "RX",
+        "U0RXD"
+      ],
+      "functions": [
+        "UART0 RX"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        -8.889351,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        -8.889351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-3",
+      "silkscreen": "0",
+      "side": "right",
+      "index": 2,
+      "physicalPosition": 3,
+      "label": "GPIO0",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO0",
+        "IO0"
+      ],
+      "functions": [
+        "ADC1_CH0"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        -6.349351,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        -6.349351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-4",
+      "silkscreen": "1",
+      "side": "right",
+      "index": 3,
+      "physicalPosition": 4,
+      "label": "GPIO1",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO1",
+        "IO1"
+      ],
+      "functions": [
+        "ADC1_CH1"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        -3.809351,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        -3.809351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-5",
+      "silkscreen": "2",
+      "side": "right",
+      "index": 4,
+      "physicalPosition": 5,
+      "label": "GPIO2",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO2",
+        "IO2"
+      ],
+      "functions": [
+        "ADC1_CH2"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        -1.269351,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        -1.269351,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-6",
+      "silkscreen": "3",
+      "side": "right",
+      "index": 5,
+      "physicalPosition": 6,
+      "label": "GPIO3",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO3",
+        "IO3"
+      ],
+      "functions": [
+        "ADC1_CH3"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        1.270649,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        1.270649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-7",
+      "silkscreen": "4",
+      "side": "right",
+      "index": 6,
+      "physicalPosition": 7,
+      "label": "GPIO4",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO4",
+        "IO4"
+      ],
+      "functions": [
+        "ADC1_CH4",
+        "JTAG MTMS",
+        "LP UART RX"
+      ],
+      "notes": "Strapping pin: external levels affect startup.",
+      "localPosition": [
+        7.636219,
+        3.810649,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        3.810649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-8",
+      "silkscreen": "5",
+      "side": "right",
+      "index": 7,
+      "physicalPosition": 8,
+      "label": "GPIO5",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO5",
+        "IO5"
+      ],
+      "functions": [
+        "ADC1_CH5",
+        "JTAG MTDI",
+        "LP UART TX"
+      ],
+      "notes": "Strapping pin: external levels affect startup.",
+      "localPosition": [
+        7.636219,
+        6.350649,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        6.350649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-9",
+      "silkscreen": "6",
+      "side": "right",
+      "index": 8,
+      "physicalPosition": 9,
+      "label": "GPIO6",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO6",
+        "IO6"
+      ],
+      "functions": [
+        "ADC1_CH6",
+        "JTAG MTCK",
+        "LP I2C SDA"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        8.890649,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        8.890649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "J2-10",
+      "silkscreen": "7",
+      "side": "right",
+      "index": 9,
+      "physicalPosition": 10,
+      "label": "GPIO7",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO7",
+        "IO7"
+      ],
+      "functions": [
+        "JTAG MTDO",
+        "LP I2C SCL"
+      ],
+      "notes": "",
+      "localPosition": [
+        7.636219,
+        11.430649,
+        -9.175
+      ],
+      "cadPosition": [
+        7.636219,
+        11.430649,
+        -9.175
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "PAD-GPIO12",
+      "silkscreen": "12",
+      "side": "top",
+      "index": 0,
+      "label": "GPIO12",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO12",
+        "IO12"
+      ],
+      "functions": [
+        "USB D-"
+      ],
+      "notes": "Shared with native USB Serial/JTAG; GPIO use can interrupt USB. Top annular solder pad; not a header pin.",
+      "localPosition": [
+        -4.542892,
+        8.879222,
+        0.585
+      ],
+      "cadPosition": [
+        -4.542892,
+        8.879222,
+        0.585
+      ],
+      "exitDirection": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "PAD-GPIO13",
+      "silkscreen": "13",
+      "side": "top",
+      "index": 1,
+      "label": "GPIO13",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO13",
+        "IO13"
+      ],
+      "functions": [
+        "USB D+"
+      ],
+      "notes": "Shared with native USB Serial/JTAG; GPIO use can interrupt USB. Top annular solder pad; not a header pin.",
+      "localPosition": [
+        -4.542892,
+        11.42,
+        0.585
+      ],
+      "cadPosition": [
+        -4.542892,
+        11.42,
+        0.585
+      ],
+      "exitDirection": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "PAD-GPIO21",
+      "silkscreen": "21",
+      "side": "top",
+      "index": 2,
+      "label": "GPIO21",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO21",
+        "IO21"
+      ],
+      "functions": [],
+      "notes": "Top annular solder pad; not a header pin.",
+      "localPosition": [
+        -1.654651,
+        6.051115,
+        0.585
+      ],
+      "cadPosition": [
+        -1.654651,
+        6.051115,
+        0.585
+      ],
+      "exitDirection": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "PAD-GPIO22",
+      "silkscreen": "22",
+      "side": "top",
+      "index": 3,
+      "label": "GPIO22",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO22",
+        "IO22"
+      ],
+      "functions": [],
+      "notes": "Top annular solder pad; not a header pin.",
+      "localPosition": [
+        -1.189032,
+        7.65425,
+        0.585
+      ],
+      "cadPosition": [
+        -1.189032,
+        7.65425,
+        0.585
+      ],
+      "exitDirection": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "PAD-GPIO23",
+      "silkscreen": "23",
+      "side": "top",
+      "index": 4,
+      "label": "GPIO23",
+      "electrical": "bidirectional",
+      "voltage": 3.3,
+      "aliases": [
+        "GPIO23",
+        "IO23"
+      ],
+      "functions": [],
+      "notes": "Top annular solder pad; not a header pin.",
+      "localPosition": [
+        6.187921,
+        6.868556,
+        0.585
+      ],
+      "cadPosition": [
+        6.187921,
+        6.868556,
+        0.585
+      ],
+      "exitDirection": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "B+",
+      "label": "Battery +",
+      "silkscreen": "B+",
+      "side": "bottom",
+      "index": 0,
+      "electrical": "power-in",
+      "localPosition": [
+        -1.897604,
+        -11,
+        -0.585
+      ],
+      "cadPosition": [
+        -1.897604,
+        -11,
+        -0.585
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Underside battery solder pad. Label verified from CAD; battery operating limits are not established by the STEP model."
+    },
+    {
+      "id": "B-",
+      "label": "Battery -",
+      "silkscreen": "B-",
+      "side": "bottom",
+      "index": 1,
+      "electrical": "power-return",
+      "localPosition": [
+        2.102396,
+        -11,
+        -0.585
+      ],
+      "cadPosition": [
+        2.102396,
+        -11,
+        -0.585
+      ],
+      "exitDirection": [
+        0,
+        0,
+        -1
+      ],
+      "notes": "Underside battery solder pad. Label verified from CAD; battery operating limits are not established by the STEP model."
+    }
+  ],
+  "dimensions": [
+    18.00012244542321,
+    27.96854144011499,
+    13.133472309236044
+  ],
+  "geometry": {
+    "kind": "model",
+    "quality": "detailed",
+    "modelFormat": "glb",
+    "modelAssetId": "esp32-c6-supermini",
+    "modelUrl": "/models/esp32-c6-supermini.glb",
+    "modelCenter": [
+      0,
+      0,
+      0
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "calibrated": true,
+    "verified": true,
+    "geometryVerified": true,
+    "pinPositionsVerified": true,
+    "electricalMappingVerified": true,
+    "pinMappingVersion": 1,
+    "pinToleranceMm": 0.02,
+    "modelSource": "Imported STEP CAD / Tenstar C6 Supermini",
+    "sourceFilename": "ESP32 C6 Supermini.step",
+    "sourceSha256": "d9810a2aa01813701d7cf2bf6f06b5e51e5b7dc61a8628fadd68cd8553b4d6e1",
+    "triangleCount": 322272,
+    "meshCount": 1,
+    "materialCount": 38
+  }
+}

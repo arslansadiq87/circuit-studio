@@ -2,6 +2,8 @@
 
 Circuit Studio is a browser-first editor for arranging, wiring and presenting 3D electronics components. The editor uses React, TypeScript, Three.js, React Three Fiber, Drei, Zustand and Zod.
 
+See [Feature report and demo guide](docs/FEATURES_AND_DEMO_GUIDE.md) for the complete feature inventory, recording outline, vlog talking points, and public-demo accuracy notes.
+
 ## Run the editor
 
 ```bash

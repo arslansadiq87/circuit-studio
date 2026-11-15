@@ -1,5 +1,6 @@
 import {saveGeneratedScenes} from './savedCameraScenes';
 import {useEffect,useRef,useState} from 'react';
+import {ChevronDown} from 'lucide-react';
 import {useEditor} from './store';
 import {useNetSelection} from './wireAnimation';
 import {backgroundCss,backgroundSolidColor,backgroundStops,defaultVideoSettings,isHexColor,validSettings,videoPresets,videoFilename,VIDEO_BACKGROUND_PRESETS,type VideoSettings} from './cinematic';
@@ -48,7 +49,7 @@ export function AutoVideoControls(){
   const {cameraSnapshot}=await import('./projectFiles');const camera=cameraSnapshot(project).camera;change({overrides:{...settings.overrides,[shotId]:camera}});setMessage(`Saved editor camera for ${shotId}. Rebuild preview to inspect.`)
  };
  void revision;
- return <><button title={eligible?'Generate a finished wiring video':reason} disabled={busy||!eligible} onClick={()=>void exportVideo()}>Auto Video</button><button aria-label="Video settings" title="Video settings" disabled={busy} onClick={()=>setOpen(true)}>â–¾</button>
+ return <><button title={eligible?'Generate a finished wiring video':reason} disabled={busy||!eligible} onClick={()=>void exportVideo()}>Auto Video</button><button className="video-settings-button" aria-label="Video settings" title="Video settings" disabled={busy} onClick={()=>setOpen(true)}><ChevronDown size={14}/></button>
  {open&&<div className="modal-backdrop"><section className="video-dialog" role="dialog" aria-label="Auto Video settings"><div className="panel-head"><h2>Automatic wiring video</h2><button disabled={busy} onClick={()=>{setOpen(false);preview.current?.dispose();preview.current=null}}>Close</button></div>
  <div className="video-fields"><label>Preset<select defaultValue="Default Tutorial" disabled={busy} onChange={e=>setSettings(validSettings(videoPresets[e.target.value as keyof typeof videoPresets]))}>{Object.keys(videoPresets).map(k=><option key={k}>{k}</option>)}</select></label>
  <label>Animation mode<select value={settings.mode} disabled={busy} onChange={e=>change({mode:e.target.value as VideoSettings['mode']})}><option value="tutorial">Automatic Tutorial</option><option value="all">All Connections</option><option value="sequential">One by One</option><option value="selected">Selected Connections</option><option value="orbit">Final Circuit Orbit</option></select></label>

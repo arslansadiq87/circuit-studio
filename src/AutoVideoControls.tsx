@@ -1,4 +1,5 @@
-import {saveGeneratedScenes} from './savedCameraScenes';
+import {readCameraScenes,saveGeneratedScenes} from './savedCameraScenes';
+import {projectCameraScenes,projectVideoSettings,withPresentation} from './presentation';
 import {useEffect,useRef,useState} from 'react';
 import {ChevronDown} from 'lucide-react';
 import {useEditor} from './store';
@@ -9,17 +10,22 @@ const storageKey='c3d-video-preset-v1';
 function loadSettings(){try{return validSettings(JSON.parse(localStorage.getItem(storageKey)??'null'))}catch{return {...defaultVideoSettings}}}
 const rgbText=(hex:string)=>{const value=Number.parseInt(hex.slice(1),16);return `${value>>16} Â· ${value>>8&255} Â· ${value&255}`};
 export function AutoVideoControls(){
- const project=useEditor(s=>s.project),selected=useNetSelection(s=>s.ids);const [settings,setSettings]=useState(loadSettings),[open,setOpen]=useState(false),[progress,setProgress]=useState<Progress|null>(null),[message,setMessage]=useState(''),[caps,setCaps]=useState<{mp4:boolean;webm:boolean}|null>(null),[direct,setDirect]=useState(false);
+ const project=useEditor(s=>s.project),selected=useNetSelection(s=>s.ids);const [settings,setSettings]=useState(()=>projectVideoSettings(useEditor.getState().project)??loadSettings()),[open,setOpen]=useState(false),[progress,setProgress]=useState<Progress|null>(null),[message,setMessage]=useState(''),[caps,setCaps]=useState<{mp4:boolean;webm:boolean}|null>(null),[direct,setDirect]=useState(false);
  const abort=useRef<AbortController|null>(null),preview=useRef<CinematicRenderer|null>(null),host=useRef<HTMLDivElement>(null),[duration,setDuration]=useState(0),[time,setTime]=useState(0),[revision,setRevision]=useState(0),[shotId,setShotId]=useState('');
  const [hexDraft,setHexDraft]=useState(settings.customSolidColor),[hexError,setHexError]=useState(false);
  const busy=!!progress&&progress.stage!=='Complete',backgroundDescription=backgroundSolidColor(settings)??(backgroundStops(settings)?.join(' â†’ ')??'PNG alpha');
- useEffect(()=>{try{localStorage.setItem(storageKey,JSON.stringify(settings))}catch{/* local storage full */}},[settings]);
+ // The browser preset only follows projects that do not store their own settings.
+ useEffect(()=>{if(useEditor.getState().project.presentation?.video)return;try{localStorage.setItem(storageKey,JSON.stringify(settings))}catch{/* local storage full */}},[settings]);
  useEffect(()=>()=>{abort.current?.abort();preview.current?.dispose()},[]);
  useEffect(()=>{if(!open)return;let alive=true;setCaps(null);void import('./videoExport').then(m=>m.videoCapabilities(settings)).then(value=>{if(alive)setCaps(value)}).catch(()=>{if(alive)setCaps({mp4:false,webm:false})});return()=>{alive=false}},[open,settings.width,settings.fps]);
  useEffect(()=>{preview.current?.dispose();preview.current=null;setDuration(0);setTime(0)},[project,selected]);
  useEffect(()=>{setHexDraft(settings.customSolidColor);setHexError(false)},[settings.customSolidColor]);
  useEffect(()=>{if(!preview.current)return;preview.current.updateSettings(settings);const canvas=preview.current.render(time);host.current?.replaceChildren(canvas);setRevision(n=>n+1)},[settings.backgroundPresetId,settings.customSolidColor,settings.gradientStartColor,settings.gradientEndColor,settings.gradientDirection,settings.gradientPosition,settings.showFloor,settings.floorColor,settings.showGrid,settings.groundShadows,settings.fillLightIntensity,settings.rimLightIntensity,settings.labels,settings.hudStyle,settings.closingLabel]);
+ // Settings stored in the project win over the browser preset when a project is opened or its stored settings change.
+ const storedVideo=project.presentation?.video;const firstRender=useRef(true);useEffect(()=>{if(firstRender.current){firstRender.current=false;return}setSettings(projectVideoSettings(useEditor.getState().project)??loadSettings())},[storedVideo]);
  const change=(patch:Partial<VideoSettings>)=>setSettings(s=>validSettings({...s,...patch}));
+ const storeInProject=()=>{const scenes=[...projectCameraScenes(project)];for(const s of readCameraScenes(project.name))if(!scenes.some(p=>p.id===s.id))scenes.push(s);useEditor.getState().setPresentation(withPresentation(project,settings,scenes));setMessage(`Stored video settings and ${scenes.length} camera scene${scenes.length===1?'':'s'} in the project. Save the project to keep them.`)};
+ const removeFromProject=()=>{useEditor.getState().setPresentation(undefined);setMessage('Removed video settings and camera scenes from the project. Browser presets apply again.')};
  // Button eligibility needs valid endpoints, not a full cinematic route plan.
  const visibleParts=new Map(project.components.filter(c=>c.visible!==false).map(c=>[c.id,c]));
  const hasConnection=project.wires.some(w=>w.visible!==false&&(!(settings.selectedOnly||settings.mode==='selected')||selected.includes(w.id))&&visibleParts.get(w.from.componentId)?.pins.some(p=>p.id===w.from.pinId)&&visibleParts.get(w.to.componentId)?.pins.some(p=>p.id===w.to.pinId));
@@ -76,7 +82,7 @@ export function AutoVideoControls(){
  {([['keepCompleted','Keep completed wires visible'],['fadeUnrelated','Fade unrelated wires'],['tipGlow','Reveal tip glow (visual guide)']] as const).map(([key,label])=><label key={key} className="video-check"><input type="checkbox" checked={settings[key]} disabled={busy} onChange={e=>change({[key]:e.target.checked})}/>{label}</label>)}
  <label className="video-check"><input type="checkbox" checked={direct} disabled={busy} onChange={e=>setDirect(e.target.checked)}/>Save directly to file (MP4/WebM)</label></div>
  {!eligible&&<p role="status">{reason}</p>}
- <div className="video-actions"><button disabled={busy||!eligible} onClick={()=>void makePreview()}>Preview sequence</button><button disabled={busy||!eligible} onClick={()=>void exportVideo()}>Export video</button><button disabled={busy||!Object.keys(settings.overrides).length} onClick={()=>change({overrides:{}})}>Clear camera overrides</button></div>
+ <div className="video-actions"><button disabled={busy||!eligible} onClick={()=>void makePreview()}>Preview sequence</button><button disabled={busy||!eligible} onClick={()=>void exportVideo()}>Export video</button><button disabled={busy||!Object.keys(settings.overrides).length} onClick={()=>change({overrides:{}})}>Clear camera overrides</button><button disabled={busy} title="Save the video settings, shot camera overrides and saved camera scenes inside the project file" onClick={storeInProject}>{storedVideo?'Update settings in project':'Store settings in project'}</button>{storedVideo&&<button disabled={busy} onClick={removeFromProject}>Remove from project</button>}</div>
  <div className="video-preview" ref={host}/>{duration>0&&<><label>Preview time {time.toFixed(2)} / {duration.toFixed(2)} s<input aria-label="Preview time" type="range" min={0} max={duration} step={.01} value={time} onChange={e=>seek(Number(e.target.value))}/></label><select aria-label="Shot" value={shotId} onChange={e=>{setShotId(e.target.value);const shot=preview.current?.sequence.shots.find(s=>s.id===e.target.value);if(shot)seek(shot.start+shot.duration*.5)}}>{preview.current?.sequence.shots.map(s=><option key={s.id} value={s.id}>{s.id} {s.quality?`(score ${s.quality.score.toFixed(1)})`:''}</option>)}</select><button onClick={()=>void saveOverride()}>Use editor camera for shot</button><button onClick={()=>{if(preview.current){saveGeneratedScenes(preview.current.sequence);setMessage('Added generated views to Camera scenes without replacing saved views.')}}}>Save generated camera scenes</button></>}
  </section></div>}
  {(busy||message)&&<div className="video-status" role="status">{progress&&<><strong>{progress.stage}</strong><p>Frame {progress.frame} / {progress.total} Â· {progress.percent.toFixed(1)}%</p><progress max={100} value={progress.percent}/><button onClick={()=>abort.current?.abort()}>Cancel video</button></>}{message&&<><p>{message}</p><button onClick={()=>setMessage('')}>Dismiss</button></>}</div>}

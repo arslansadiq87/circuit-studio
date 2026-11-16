@@ -6,7 +6,7 @@ Circuit Studio is a static, browser-only application. Build it with `npm ci` and
 
 The included workflow at `.github/workflows/deploy.yml` builds and deploys the `main` branch on every push (and supports manual runs). In the GitHub repository, open **Settings → Pages** and select **GitHub Actions** as the build and deployment source. Push the project to a GitHub repository with a `main` branch; Vite reads the repository name from Actions and sets the correct project-site path automatically. The workflow publishes the built `dist/` folder.
 
-For a subpath deployment, set Vite's `base` option to the public path before building. The default build targets a domain root. Keep HTTPS enabled so browser file and graphics APIs work consistently.
+For a subpath deployment, set Vite's `base` option to the public path before building. Bundled models and fonts are requested relative to that base, while saved projects keep their `/models/...` references unchanged. The default build targets a domain root. Keep HTTPS enabled so browser file and graphics APIs work consistently.
 
 Every page load starts a new blank simulation. Visitors can add components, use **Save** to download a `.c3dproj` file or **Package** to download a portable `.c3dzip` including model assets, and use **Open** to choose a previously saved file from their device. The application does not upload simulation files. Custom component library items are kept in that browser's local IndexedDB; users should export those components or include them in project packages when they need to move them to another browser/device.
 

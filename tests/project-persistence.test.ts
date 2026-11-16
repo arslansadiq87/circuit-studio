@@ -1,13 +1,13 @@
 import 'fake-indexeddb/auto';
 import {describe,it,expect,vi} from 'vitest';
-import {initialProject} from '../src/model';
+import {demoProject} from '../src/model';
 import {restoreLocalProject,saveLocalProject} from '../src/projectPersistence';
 
 describe('local project persistence',()=>{
  it('restores edited components, pin names, wires, and camera',async()=>{
   const values=new Map<string,string>();
   vi.stubGlobal('localStorage',{getItem:(key:string)=>values.get(key)??null,setItem:(key:string,value:string)=>{values.set(key,value)}});
-  const project=structuredClone(initialProject);
+  const project=structuredClone(demoProject);
   project.name='Saved circuit';
   project.components[0].position=[24,12,0];
   project.components[0].pins[0].label='RESET';

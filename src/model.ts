@@ -45,6 +45,17 @@ export const LDR_COMPONENT:Component=ComponentSchema.parse(ldrData);
 export const STEPPER_24BYJ_48_COMPONENT:Component=ComponentSchema.parse(stepperData);
 export const DVR8825_COMPONENT:Component=driverPcbContacts(ComponentSchema.parse(driverData));
 export const SONOFF_CAM_S3W_COMPONENT:Component=ComponentSchema.parse(cameraData);
+// Canonical templates for built-in CAD components. Saved projects may keep only
+// modelId, so consumers can recover their bundled asset and placement metadata.
+export const BUILT_IN_MODEL_COMPONENTS:ReadonlyMap<string,Component>=new Map(
+ [YD_ESP32_S3_V34_COMPONENT,ESP32_WROOM_COMPONENT,ESP32_30PIN_COMPONENT,ESP32_C3_COMPONENT,ESP32_C6_COMPONENT,LED_COMPONENT,USB_A_BREAKOUT_COMPONENT,RESISTOR_COMPONENT,LDR_COMPONENT,STEPPER_24BYJ_48_COMPONENT,DVR8825_COMPONENT,SONOFF_CAM_S3W_COMPONENT]
+  .map(component=>[component.modelId,component])
+);
+// A project can contain model-only legacy copies of procedural-looking parts
+// (for example resistor and LDR) whose model geometry is canonical too.
+export const BUILT_IN_MODEL_FALLBACKS:ReadonlyMap<string,Component>=new Map(
+ [RESISTOR_COMPONENT,LDR_COMPONENT,LED_COMPONENT].map(component=>[component.modelId,component])
+);
 export const demoProject:Project={schemaVersion:1,name:'ESP32-S3 / USB-Circuit',components:[
 {...YD_ESP32_S3_V34_COMPONENT,id:'esp32',position:[-42,6,0],rotation:[0,0,0]},
 structuredClone(USB_A_BREAKOUT_COMPONENT)

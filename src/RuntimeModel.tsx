@@ -3,7 +3,7 @@ import {useFrame,useThree} from '@react-three/fiber';
 import {Html} from '@react-three/drei';
 import * as THREE from 'three';
 import type {Component} from './model';
-import {acquireModel,capTextures,noRaycast,type Lod} from './modelCache';
+import {acquireModel,builtInModel,capTextures,noRaycast,type Lod} from './modelCache';
 import {fitModelScale} from './geometry';
 import {useGraphics} from './graphics';
 export const exportPreparers=new Set<(detail:Lod)=>Promise<void>>();
@@ -45,7 +45,7 @@ export function RuntimeModel({component}:{component:Component}){
  const anchor=useRef<THREE.Group>(null);
  const {camera,size,invalidate}=useThree();const detail=useGraphics(s=>s.settings.geometry),maxTexture=useGraphics(s=>s.exporting?4096:s.settings.maxTextureSize),exporting=useGraphics(s=>s.exporting);
  const constrainedMotion=useGraphics(s=>s.moving&&s.constrained);
- const g=component.geometry;const identity=JSON.stringify([g?.modelUrl,g?.modelAssetId,g?.lodUrls,g?.modelContentHash]);
+ const g=component.geometry??builtInModel(component)?.geometry;const identity=JSON.stringify([g?.modelUrl,g?.modelAssetId,g?.lodUrls,g?.modelContentHash]);
  const context=useMemo(()=>({alive:true,loading:new Map<Lod,Promise<void>>(),releases:[] as (()=>void)[]}),[identity]);
  const currentLevel=useRef(level),beforeExport=useRef<Lod|undefined>(undefined);currentLevel.current=level;
  const visibleModel=useRef<THREE.Group|null>(null),readyWaiters=useRef<{level:Lod;resolve:()=>void;reject:(error:Error)=>void}[]>([]);

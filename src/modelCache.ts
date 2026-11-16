@@ -5,13 +5,15 @@ import {assetFromUrl} from './assets';
 import {getPartBlob} from './library';
 import type {Component} from './model';
 import {diagnostics} from './graphics';
+import {BUILT_IN_MODEL_COMPONENTS,BUILT_IN_MODEL_FALLBACKS} from './model';
 export type Lod='low'|'medium'|'high';
 export const cadLods={low:'/models/yd-esp32-s3-v34-low.glb',medium:'/models/yd-esp32-s3-v34-medium.glb',high:'/models/yd-esp32-s3-v34-high.glb'};
 type Entry={promise:Promise<THREE.Group>;refs:number;timer?:ReturnType<typeof setTimeout>};
 const models=new Map<string,Entry>();
 export const noRaycast=()=>{};
-export function modelUrl(component:Component,level:Lod){return component.geometry?.lodUrls?.[level]??(component.modelId==='yd-esp32-s3-v34'?cadLods[level]:component.geometry?.modelUrl)}
-export async function modelResource(component:Component,level:Lod){const url=modelUrl(component,level);if(url)return assetFromUrl(url);const id=component.geometry?.modelAssetId;if(!id)throw new Error('No model asset reference');return getPartBlob(id)}
+export function builtInModel(component:Component){return BUILT_IN_MODEL_COMPONENTS.get(component.modelId)??BUILT_IN_MODEL_FALLBACKS.get(component.modelId)}
+export function modelUrl(component:Component,level:Lod){const geometry=component.geometry??builtInModel(component)?.geometry;return geometry?.lodUrls?.[level]??(component.modelId==='yd-esp32-s3-v34'?cadLods[level]:geometry?.modelUrl)}
+export async function modelResource(component:Component,level:Lod){const url=modelUrl(component,level);if(url)return assetFromUrl(url);const id=component.geometry?.modelAssetId??builtInModel(component)?.geometry?.modelAssetId;if(!id)throw new Error('No model asset reference');return getPartBlob(id)}
 export async function acquireModel(component:Component,level:Lod){const started=performance.now();const {blob,hash}=await modelResource(component,level);const fetched=performance.now(),format=component.geometry?.modelFormat??'glb',key=`${hash}:${format}`;let entry=models.get(key);
  if(entry){diagnostics.cacheHits++;if(entry.timer)clearTimeout(entry.timer)}
  else{entry={refs:0,promise:(async()=>{diagnostics.parses++;const bytes=await blob.arrayBuffer();let group:THREE.Group;if(format==='obj')group=new OBJLoader().parse(new TextDecoder().decode(bytes));else if(format==='stl'){group=new THREE.Group();group.add(new THREE.Mesh(new STLLoader().parse(bytes),new THREE.MeshStandardMaterial({color:'#738b79',metalness:.2,roughness:.55})))}else{const loader=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);group=(await loader.parseAsync(bytes,'')).scene}group.traverse(o=>{o.raycast=noRaycast;if(o instanceof THREE.Mesh){o.castShadow=true;o.receiveShadow=true}});diagnostics.modelTimings.push({key,fetchMs:fetched-started,parseMs:performance.now()-fetched});return group})()};models.set(key,entry);entry.promise.catch(()=>models.delete(key))}

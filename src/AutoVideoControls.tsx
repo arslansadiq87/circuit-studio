@@ -1,4 +1,4 @@
-import {saveGeneratedScenes} from './savedCameraScenes';
+import {readCameraScenes,saveGeneratedScenes} from './savedCameraScenes';
 import {useEffect,useRef,useState} from 'react';
 import {ChevronDown} from 'lucide-react';
 import {useEditor} from './store';
@@ -6,14 +6,16 @@ import {useNetSelection} from './wireAnimation';
 import {backgroundCss,backgroundSolidColor,backgroundStops,defaultVideoSettings,isHexColor,validSettings,videoPresets,videoFilename,VIDEO_BACKGROUND_PRESETS,type VideoSettings} from './cinematic';
 import type {CinematicRenderer,Progress,VideoFile} from './videoExport';
 const storageKey='c3d-video-preset-v1';
-function loadSettings(){try{return validSettings(JSON.parse(localStorage.getItem(storageKey)??'null'))}catch{return {...defaultVideoSettings}}}
+function loadSettings(value?:unknown){if(value!==undefined)return validSettings(value);try{return validSettings(JSON.parse(localStorage.getItem(storageKey)??'null'))}catch{return {...defaultVideoSettings}}}
 const rgbText=(hex:string)=>{const value=Number.parseInt(hex.slice(1),16);return `${value>>16} Â· ${value>>8&255} Â· ${value&255}`};
 export function AutoVideoControls(){
- const project=useEditor(s=>s.project),selected=useNetSelection(s=>s.ids);const [settings,setSettings]=useState(loadSettings),[open,setOpen]=useState(false),[progress,setProgress]=useState<Progress|null>(null),[message,setMessage]=useState(''),[caps,setCaps]=useState<{mp4:boolean;webm:boolean}|null>(null),[direct,setDirect]=useState(false);
+ const project=useEditor(s=>s.project),selected=useNetSelection(s=>s.ids);const [settings,setSettings]=useState(()=>loadSettings(project.presentation?.video)),[open,setOpen]=useState(false),[progress,setProgress]=useState<Progress|null>(null),[message,setMessage]=useState(''),[caps,setCaps]=useState<{mp4:boolean;webm:boolean}|null>(null),[direct,setDirect]=useState(false);
  const abort=useRef<AbortController|null>(null),preview=useRef<CinematicRenderer|null>(null),host=useRef<HTMLDivElement>(null),[duration,setDuration]=useState(0),[time,setTime]=useState(0),[revision,setRevision]=useState(0),[shotId,setShotId]=useState('');
  const [hexDraft,setHexDraft]=useState(settings.customSolidColor),[hexError,setHexError]=useState(false);
  const busy=!!progress&&progress.stage!=='Complete',backgroundDescription=backgroundSolidColor(settings)??(backgroundStops(settings)?.join(' â†’ ')??'PNG alpha');
- useEffect(()=>{try{localStorage.setItem(storageKey,JSON.stringify(settings))}catch{/* local storage full */}},[settings]);
+ useEffect(()=>{if(project.presentation?.video!==undefined)return;try{localStorage.setItem(storageKey,JSON.stringify(settings))}catch{/* local storage full */}},[settings,project.presentation?.video]);
+ useEffect(()=>{setSettings(loadSettings(project.presentation?.video))},[project.name,project.presentation?.video]);
+ const storeInProject=()=>{useEditor.getState().updatePresentation({video:settings,cameraScenes:project.presentation?.cameraScenes??readCameraScenes(project.name)});setMessage('Auto Video settings stored in this project. Save the project file to keep them.')};
  useEffect(()=>()=>{abort.current?.abort();preview.current?.dispose()},[]);
  useEffect(()=>{if(!open)return;let alive=true;setCaps(null);void import('./videoExport').then(m=>m.videoCapabilities(settings)).then(value=>{if(alive)setCaps(value)}).catch(()=>{if(alive)setCaps({mp4:false,webm:false})});return()=>{alive=false}},[open,settings.width,settings.fps]);
  useEffect(()=>{preview.current?.dispose();preview.current=null;setDuration(0);setTime(0)},[project,selected]);
@@ -76,7 +78,7 @@ export function AutoVideoControls(){
  {([['keepCompleted','Keep completed wires visible'],['fadeUnrelated','Fade unrelated wires'],['tipGlow','Reveal tip glow (visual guide)']] as const).map(([key,label])=><label key={key} className="video-check"><input type="checkbox" checked={settings[key]} disabled={busy} onChange={e=>change({[key]:e.target.checked})}/>{label}</label>)}
  <label className="video-check"><input type="checkbox" checked={direct} disabled={busy} onChange={e=>setDirect(e.target.checked)}/>Save directly to file (MP4/WebM)</label></div>
  {!eligible&&<p role="status">{reason}</p>}
- <div className="video-actions"><button disabled={busy||!eligible} onClick={()=>void makePreview()}>Preview sequence</button><button disabled={busy||!eligible} onClick={()=>void exportVideo()}>Export video</button><button disabled={busy||!Object.keys(settings.overrides).length} onClick={()=>change({overrides:{}})}>Clear camera overrides</button></div>
+ <div className="video-actions"><button disabled={busy} onClick={storeInProject}>{project.presentation?.video===undefined?'Store settings in project':'Update project settings'}</button><button disabled={busy||!eligible} onClick={()=>void makePreview()}>Preview sequence</button><button disabled={busy||!eligible} onClick={()=>void exportVideo()}>Export video</button><button disabled={busy||!Object.keys(settings.overrides).length} onClick={()=>change({overrides:{}})}>Clear camera overrides</button></div>
  <div className="video-preview" ref={host}/>{duration>0&&<><label>Preview time {time.toFixed(2)} / {duration.toFixed(2)} s<input aria-label="Preview time" type="range" min={0} max={duration} step={.01} value={time} onChange={e=>seek(Number(e.target.value))}/></label><select aria-label="Shot" value={shotId} onChange={e=>{setShotId(e.target.value);const shot=preview.current?.sequence.shots.find(s=>s.id===e.target.value);if(shot)seek(shot.start+shot.duration*.5)}}>{preview.current?.sequence.shots.map(s=><option key={s.id} value={s.id}>{s.id} {s.quality?`(score ${s.quality.score.toFixed(1)})`:''}</option>)}</select><button onClick={()=>void saveOverride()}>Use editor camera for shot</button><button onClick={()=>{if(preview.current){saveGeneratedScenes(preview.current.sequence);setMessage('Added generated views to Camera scenes without replacing saved views.')}}}>Save generated camera scenes</button></>}
  </section></div>}
  {(busy||message)&&<div className="video-status" role="status">{progress&&<><strong>{progress.stage}</strong><p>Frame {progress.frame} / {progress.total} Â· {progress.percent.toFixed(1)}%</p><progress max={100} value={progress.percent}/><button onClick={()=>abort.current?.abort()}>Cancel video</button></>}{message&&<><p>{message}</p><button onClick={()=>setMessage('')}>Dismiss</button></>}</div>}

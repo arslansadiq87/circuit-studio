@@ -67,11 +67,11 @@ export const demoProject:Project={schemaVersion:1,name:'ESP32-S3 / USB-Circuit',
 structuredClone(USB_A_BREAKOUT_COMPONENT)
 ,{id:'external-5v',modelId:'external-5v-supply',name:'Power Supply',outputVoltage:5,position:[42,-48,0],rotation:[0,0,0],pins:[{id:'OUT+',label:'5V OUT',side:'top',index:0,physicalPosition:1,electrical:'power-out',voltage:5,localPosition:[-6,12,9.8],exitDirection:[0,1,0]},{id:'GND',label:'GND OUT',side:'top',index:1,physicalPosition:2,electrical:'ground',voltage:0,localPosition:[6,12,9.8],exitDirection:[0,1,0]}],dimensions:[30,24,12],geometry:{kind:'procedural-pcb',pcbColor:'#33383c',pcbThickness:3,verified:false,quality:'enhanced-procedural',category:'External power'}}
 ],wires:[
-{id:'wire-dm',from:{componentId:'esp32',pinId:'J3-20'},to:{componentId:'usb-a',pinId:'A2'},color:'#dc5c51',diameter:1.05,label:'USB D- Â· GPIO19',curvature:19,routeMode:'manual',liftHeight:9,bendPoints:[[-15,28,11],[14,18,11],[39,-9,9]]},
-{id:'wire-dp',from:{componentId:'esp32',pinId:'J3-19'},to:{componentId:'usb-a',pinId:'A3'},color:'#5b8eea',diameter:1.05,label:'USB D+ Â· GPIO20',curvature:19,routeMode:'manual',liftHeight:11,bendPoints:[[-18,34,14],[16,25,14],[44,-8,11]]},
-{id:'wire-ground',from:{componentId:'esp32',pinId:'J1-22'},to:{componentId:'usb-a',pinId:'A4'},color:'#30323a',diameter:1.25,label:'USB GND Â· Common GND',curvature:19,liftHeight:5,routeMode:'manual',bendPoints:[[-14,0,8],[12,-21,7],[49,-22,6]]},
-{id:'wire-vbus',from:{componentId:'external-5v',pinId:'OUT+'},to:{componentId:'usb-a',pinId:'A1'},color:'#e4ad4f',diameter:1.25,label:'Power Supply Â· VBUS',curvature:19,liftHeight:5,routeMode:'manual',bendPoints:[[27,-30,14],[29,-17,9]]},
-{id:'wire-common-ground',from:{componentId:'external-5v',pinId:'GND'},to:{componentId:'esp32',pinId:'J1-22'},color:'#383d45',diameter:1.25,label:'External supply GND Â· Common GND',curvature:19,routeMode:'manual',liftHeight:6,bendPoints:[[13,-38,7],[-15,-35,8]]}
+{id:'wire-dm',from:{componentId:'esp32',pinId:'J3-20'},to:{componentId:'usb-a',pinId:'A2'},color:'#dc5c51',diameter:1.05,label:'USB D- · GPIO19',curvature:19,routeMode:'manual',liftHeight:9,bendPoints:[[-15,28,11],[14,18,11],[39,-9,9]]},
+{id:'wire-dp',from:{componentId:'esp32',pinId:'J3-19'},to:{componentId:'usb-a',pinId:'A3'},color:'#5b8eea',diameter:1.05,label:'USB D+ · GPIO20',curvature:19,routeMode:'manual',liftHeight:11,bendPoints:[[-18,34,14],[16,25,14],[44,-8,11]]},
+{id:'wire-ground',from:{componentId:'esp32',pinId:'J1-22'},to:{componentId:'usb-a',pinId:'A4'},color:'#30323a',diameter:1.25,label:'USB GND · Common GND',curvature:19,liftHeight:5,routeMode:'manual',bendPoints:[[-14,0,8],[12,-21,7],[49,-22,6]]},
+{id:'wire-vbus',from:{componentId:'external-5v',pinId:'OUT+'},to:{componentId:'usb-a',pinId:'A1'},color:'#e4ad4f',diameter:1.25,label:'Power Supply · VBUS',curvature:19,liftHeight:5,routeMode:'manual',bendPoints:[[27,-30,14],[29,-17,9]]},
+{id:'wire-common-ground',from:{componentId:'external-5v',pinId:'GND'},to:{componentId:'esp32',pinId:'J1-22'},color:'#383d45',diameter:1.25,label:'External supply GND · Common GND',curvature:19,routeMode:'manual',liftHeight:6,bendPoints:[[13,-38,7],[-15,-35,8]]}
 ],camera:{position:[0,-115,144],target:[0,0,0]}};
 export const initialProject:Project={...demoProject,name:'Untitled Simulation',components:[],wires:[]};
 

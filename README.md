@@ -113,3 +113,7 @@ Drag the grip in the Connections table to set the one-by-one net animation seque
 - [Short native 4K MP4](artifacts/sprint4-sample-4k.mp4)
 
 Run `npm run test:e2e:video` for the real Chromium video acceptance, or `npm run test:e2e` for all browser regressions. The Vite development server must be running on port 5173. Video acceptance requires installed Chrome with working WebCodecs and FFmpeg/ffprobe on PATH; unsupported H.264 is reported as a failure for the acceptance example, not skipped.
+
+### Local model drop folder
+
+Place source models in the repository's `Custom Components/` folder. This folder is ignored by Git. Keep any `.gltf` file together with its referenced `.bin` and image files. In Component Workshop, choose the matching model format and select the file from this folder (for glTF, select its sidecars too). Then calibrate dimensions and pins, save the part to the local library, and add it to the project. An agent working in this repository can read models from this folder and prepare the component metadata; a browser cannot automatically read arbitrary local files without a file selection. For a portable project, use **Save** or **Package** to embed the imported model.

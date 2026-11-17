@@ -11,6 +11,7 @@
     "test:e2e": "node scripts/e2e-custom-component.mjs && node scripts/e2e-performance.mjs && node scripts/e2e-auto-video.mjs && node scripts/e2e-video-stability.mjs",
     "test:e2e:performance": "node scripts/e2e-performance.mjs",
     "optimize:cad": "node scripts/optimize-cad.mjs",
+    "optimize:arduino-uno": "node scripts/optimize-arduino-uno.mjs",
     "profile:performance": "node scripts/profile-performance.mjs optimized",
     "test:e2e:video": "node scripts/e2e-auto-video.mjs && node scripts/e2e-video-stability.mjs"
   },

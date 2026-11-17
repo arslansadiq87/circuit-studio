@@ -1,0 +1,80 @@
+{
+  "source": "Custom Components/arduino-uno/source/Arduino UNO sketchfab.glb",
+  "sourceSha256": "6381071decd738f52ee9200ca5f64773c9b051ee8f9b214729be3e0b8b7243bd",
+  "sourceBytes": 62519672,
+  "sourceStats": {
+    "meshes": 53,
+    "primitives": 91,
+    "triangles": 77734,
+    "vertices": 55182,
+    "materials": 12,
+    "textures": 4,
+    "sceneMeshInstances": 53,
+    "sceneDrawCalls": 91,
+    "sceneTriangles": 77734,
+    "bounds": {
+      "min": [
+        -0.026417741551995277,
+        -0.0016786304768174887,
+        -0.04138806089758873
+      ],
+      "max": [
+        0.026582272723317146,
+        0.01260000467300415,
+        0.034064370673149824
+      ]
+    }
+  },
+  "output": "public/models/arduino-uno-r3.glb",
+  "outputBytes": 4660496,
+  "outputStats": {
+    "meshes": 7,
+    "primitives": 10,
+    "triangles": 51026,
+    "vertices": 39623,
+    "materials": 10,
+    "textures": 4,
+    "sceneMeshInstances": 7,
+    "sceneDrawCalls": 10,
+    "sceneTriangles": 51026,
+    "bounds": {
+      "min": [
+        -0.026417750702871265,
+        -0.0016790259051216458,
+        -0.04138806089758873
+      ],
+      "max": [
+        0.026582285599483432,
+        0.01260040033413895,
+        0.034064366947859526
+      ]
+    }
+  },
+  "textureFormats": [
+    {
+      "name": "Arduino_UNO_top_Diffuse",
+      "mimeType": "image/webp",
+      "bytes": 2016460,
+      "resolution": "4096x4096"
+    },
+    {
+      "name": "Arduino_UNO_top_Roughness",
+      "mimeType": "image/webp",
+      "bytes": 279180,
+      "resolution": "1024x1024"
+    },
+    {
+      "name": "Arduino_UNO_bottom_Diffuse",
+      "mimeType": "image/webp",
+      "bytes": 1900294,
+      "resolution": "4096x4096"
+    },
+    {
+      "name": "Arduino_UNO_bottom_Roughness",
+      "mimeType": "image/webp",
+      "bytes": 173674,
+      "resolution": "1024x1024"
+    }
+  ],
+  "method": "Lossy WebP quality 90 on original 4096px diffuse maps; roughness encoded at quality 92 and reduced to 1024px; Meshopt simplification ratio 0.60 with relative error cap 0.0005, followed by deduplication, welding, same-material merge and Meshopt geometry compression. Original file remains untouched."
+}

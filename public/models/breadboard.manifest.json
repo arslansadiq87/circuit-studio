@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "modelId": "breadboard",
+  "sourceFile": "Custom Components/breadboard-15.snapshot.1/Breadboard.STEP",
+  "sourceSha256": "933e674de15f0ba48827b02cc0421624a250999cb611b34941e6ba220536d77a",
+  "sourceUnits": "mm",
+  "sourceBoundsMm": {
+    "min": [
+      -82.75000000000001,
+      -5.25,
+      -27.37500000000001
+    ],
+    "max": [
+      82.74999999999999,
+      4.260000100000003,
+      28.875000000000014
+    ]
+  },
+  "dimensionsMm": [
+    165.5,
+    56.25,
+    9.51
+  ],
+  "conversionTool": {
+    "name": "CadQuery",
+    "version": "2.8.0",
+    "kernel": "OpenCascade"
+  },
+  "conversionSettings": {
+    "linearToleranceMm": 0.12,
+    "angularToleranceRadians": 0.28,
+    "topTexture": "breadboard-top.jpg",
+    "topTextureQuality": 84,
+    "topTextureWidth": 2048,
+    "topTextureHeight": 683,
+    "lowAndMediumLods": true
+  },
+  "sourceStructure": {
+    "productDefinitions": 1,
+    "assemblyOccurrences": 0,
+    "advancedFaces": 8554,
+    "colorDefinitions": 4446
+  },
+  "sourceSolidCount": 2,
+  "meshCount": 3,
+  "triangleCount": 41030,
+  "materialCount": 3,
+  "modelBytes": 528448,
+  "lodBytes": {
+    "low": 263192,
+    "medium": 464544
+  },
+  "topTextureBytes": 195374,
+  "lodTriangleCounts": {
+    "high": 41030,
+    "medium": 24934,
+    "low": 12
+  },
+  "drawCallsPerLod": 1,
+  "libraryPackage": "artifacts/breadboard.c3dcomponent",
+  "pinout": {
+    "pinCount": 882,
+    "terminalHoleCount": 630,
+    "railHoleCount": 252,
+    "gridPitchMm": 2.54,
+    "calibration": "Grid calibrated to top-view 1..63 numbering and standard 2.54 mm spacing. CAD STEP supplies outer geometry but no exposed hole-center entities.",
+    "connectivity": "Five rows per terminal column are grouped; rails are independent segments split at column 32/33. This electrical connectivity follows standard half-size breadboard construction and the supplied image.",
+    "verification": "Physical pin positions and internal metal-strip continuity require a contact-level CAD model or continuity measurement."
+  },
+  "claimNote": "This part provides 630 terminal-strip access points and 252 rail access points; standard board families commonly advertise 830 holes, but this reference image/model has 63 positions per rail row."
+}

@@ -12,7 +12,8 @@ type Entry={promise:Promise<THREE.Group>;refs:number;timer?:ReturnType<typeof se
 const models=new Map<string,Entry>();
 export const noRaycast=()=>{};
 export function builtInModel(component:Component){return BUILT_IN_MODEL_COMPONENTS.get(component.modelId)??BUILT_IN_MODEL_FALLBACKS.get(component.modelId)}
-export function modelUrl(component:Component,level:Lod){const geometry=component.modelId==='arduino-uno-r3'?builtInModel(component)?.geometry:component.geometry??builtInModel(component)?.geometry;return geometry?.lodUrls?.[level]??(component.modelId==='yd-esp32-s3-v34'?cadLods[level]:geometry?.modelUrl)}
+// A saved geometry without its own model reference (no URL, LODs or asset) still uses the built-in model.
+export function modelUrl(component:Component,level:Lod){const own=component.geometry,geometry=component.modelId==='arduino-uno-r3'||!(own?.modelUrl||own?.lodUrls||own?.modelAssetId)?builtInModel(component)?.geometry??own:own;return geometry?.lodUrls?.[level]??(component.modelId==='yd-esp32-s3-v34'?cadLods[level]:geometry?.modelUrl)}
 export async function modelResource(component:Component,level:Lod){const url=modelUrl(component,level);if(url)return assetFromUrl(url,component.modelId==='arduino-uno-r3'?builtInModel(component)?.geometry?.modelContentHash:undefined);const id=component.geometry?.modelAssetId??builtInModel(component)?.geometry?.modelAssetId;if(!id)throw new Error('No model asset reference');return getPartBlob(id)}
 export async function acquireModel(component:Component,level:Lod){const started=performance.now();const {blob,hash}=await modelResource(component,level);const fetched=performance.now(),format=component.geometry?.modelFormat??'glb',key=`${hash}:${format}`;let entry=models.get(key);
  if(entry){diagnostics.cacheHits++;if(entry.timer)clearTimeout(entry.timer)}
